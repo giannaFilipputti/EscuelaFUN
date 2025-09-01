@@ -24,6 +24,6 @@
     <link href="plugins/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="https://fenaude.cl/wp-content/uploads/2025/04/cropped-LOGO-FENAUDE-2024-copia-1-1.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://fun.c-pulpro.com/favicon.png">
 
 </head>
