@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+    <title>Prueba CKEDITOR</title> 
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" /> 
+    <script type="text/javascript" src="../ckeditor.js"></script>
+    <script src="jquery-lastest.js"></script>
+</head> 
+<body> 
+<form id="formulario1" action="editor_show.php" method="post"> 
+    <div id="txtarea1" name="txtarea1" class="ckeditor" cols="80" rows="10"><p> 
+    <span style="font-size: 72px;">HOLA</span> CAR<span style="background-color: rgb(255, 215, 0);">ACOLA</span></p></div> 
+            
+
+  <input type="hidden" id="txtiarea1" name="txtiarea1"> 
+       <a id="bocultaredit"><img src="modifno.gif" /></a> 
+      <a id="bmostraredit"><img src="modif.gif" /></a> 
+    
+    <div id="txtarea2" name="txtarea2" class="ckeditor" cols="80" rows="10"><p> 
+    <span style="font-size: 72px;">HOLA</span> CAR<span style="background-color: rgb(255, 215, 0);">ACOLA</span></p></div> 
+            
+
+    <input type="hidden" id="txtiarea2" name="txtiarea2"> 
+  <button id="benviar" type="submit">Enviar</button> 
+   <a id="bocultaredit1"><img src="modifno.gif" /></a> 
+    <a id="bmostraredit1"><img src="modif.gif" /></a> 
+</form> 
+     
+ 
+<div id="result"></div> 
+<script type="text/javascript"> 
+
+var test = 'no'
+$("#bocultaredit").click(function () { 
+    editor.destroy(); 
+	test = 'no';
+}); 
+$("#bmostraredit").click(function () {
+	if (test == 'si') {
+		   editor.destroy(); 
+		}
+
+                test = 'si';
+	             
+                editor = CKEDITOR.replace( 'txtarea1', 
+                    { 
+                        toolbar: 'Admin'
+                    }); 
+}); 
+
+$("#bocultaredit1").click(function () { 
+    editor.destroy(); 
+	test = 'no';
+}); 
+$("#bmostraredit1").click(function () { 
+    if (test == 'si') {
+		   editor.destroy(); 
+		}
+
+                test = 'si';
+				editor = CKEDITOR.replace( 'txtarea2', 
+                    { 
+                        toolbar:
+		                       [
+			                     ['Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink'],
+			                     ['UIColor']
+		                        ]
+                    }); 
+}); 
+
+$("#benviar").click(function () { 
+ editor.destroy(); 
+ 
+    $("#txtiarea1").val($("#txtarea1").html());
+	 $("#txtiarea2").val($("#txtarea2").html()); 
+}); 
+
+
+</script> 
+</body> 
+</html>  

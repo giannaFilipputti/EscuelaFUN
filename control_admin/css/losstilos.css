@@ -1,0 +1,85 @@
+/*
+Copyright (c) 2003-2010, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.html or http://ckeditor.com/license
+*/
+body {
+	font-size:12px;
+		font-family:Arial, Helvetica, sans-serif;
+    	
+    	color: #929498;
+		}
+  
+
+h1 {
+	font-size:28px;
+	color:#2B7F8E;
+	font-weight:bold;
+	}
+
+
+h2 {
+	font-size:18px;
+	color:#2B7F8E;
+	font-weight:bold;
+	}
+
+
+h3 {
+	font-size:14px;
+	color:#2B7F8E;
+	font-weight:bold;
+	}
+
+
+.estiloww {
+	color:#2B7F8E;
+	font-weight:bold;
+	}
+
+.lanegrita {
+	font-weight:bold;}
+.masgrande{
+	font-size:18px}
+
+
+.super_box {
+	width:512px;}	
+.elbox_1 {
+	float:left;
+	width:33%;
+	color:#599A32;
+	font-size:17px;
+	font-weight:bold;}
+
+.elbox_2 {
+	float:left;
+	width:33%;}
+
+.elbox_3 {
+	float:left;
+	width:33%;
+	color:#599A32;
+	font-size:17px;
+	font-weight:bold;}
+
+.elbox_uni {
+	
+	color:#599A32;
+	font-size:17px;
+	font-weight:bold;}
+
+	
+
+
+
+.el_titulo{
+	font-size:18px;
+	font-weight:bold;
+	color:#000;
+	}
+
+.elbox_uni2{
+	color:#599A32;
+	font-size:14px;
+	font-weight:bold;
+	}

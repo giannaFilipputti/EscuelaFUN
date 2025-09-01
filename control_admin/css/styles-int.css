@@ -1,0 +1,423 @@
+
+
+#nav{
+ position:relative; 
+ height:25px; 
+ width:100%;
+ background:url(../images/nav.jpg) no-repeat center;
+} 
+
+#nav ul{
+	float:left;
+	margin:0;
+	padding:0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+	line-height:27px;
+	padding-left:145px;
+}
+
+#nav li{
+	float:left;
+	display:inline;
+	float:left;
+	margin:0;
+	padding:0;
+	
+} 
+
+#nav ul li a{
+	color:#848a4c;
+	text-decoration:none;
+	margin-right:30px;
+	font-weight:bold;
+} 
+
+#nav ul li a:hover{
+	color:#848a4c;
+	text-decoration:underline;
+} 
+
+.options{
+	background:url(../images/bar.jpg) repeat-x;
+	width:185px;
+	height:35px;
+	color:#5f4000;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	line-height:35px;
+	padding-left:20px;
+	margin-top:20px;
+	}
+
+ 
+#publi{
+ position:relative; 
+
+ height:274px; 
+ width:999px;
+ background:url(../images/publi.jpg) no-repeat center;
+}
+
+h2{
+	font-family:Arial, Helvetica, sans-serif;
+	color:#3d1e1a;
+	font-size:14px;
+	}
+	
+h3{
+	font-family:Arial, Helvetica, sans-serif;
+	color:#667934;
+	font-size:13px;
+	}
+	
+.articulo_descrip p{
+	color:#667934;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	}
+
+
+#leftcol ul{
+	margin:0;
+	padding:0;
+}
+
+
+	
+#leftcol{
+ width:25%; 
+ float:left; 
+ position:relative; 
+ }
+
+#leftcol li{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+
+#leftcol ul li a{
+	color:#420a0a;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	background:url(../images/categ_bg.jpg) repeat-x;
+	display:block;
+	width:185px;
+	text-decoration:none;
+	padding-left:20px;
+	line-height:24px;
+	
+}
+
+#leftcol ul li a:hover{
+	text-decoration:underline;
+}
+
+#leftcol ol li a{
+	color:#420a0a;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	background:url(../images/categ_bg.jpg) repeat-x;
+	display:block;
+	width:185px;
+	text-decoration:none;
+	padding-left:20px;
+	line-height:24px;
+	
+}
+
+#leftcol ol li a:hover{
+	text-decoration:underline;
+}
+
+#right_prod{
+	float:right;
+	width:500px;
+	margin-right:85px;
+	margin-bottom:30px;
+	}
+	
+img{
+	border:none;}
+	
+.articulo{
+	float:left;
+	width:500px;
+	border-bottom:1px solid #CCC;
+	margin:20px 0;
+	padding:0 0 20px 0;
+	}
+
+.articulo_img{
+	width:163px;
+	height:130px;
+	float:left;
+	border:1px solid #d0d1cf;
+	}
+
+.articulo_descrip{
+	width:300px;
+	float:right;
+	}
+	
+.buy{
+	float:right;
+	width:130px;
+	text-align:right;
+	margin:10px 0;
+	border-left:1px solid #CCC;
+	}
+
+#wrapper{
+	background:url(../images/bg.jpg) repeat-y center;
+	width:853px;
+	margin:auto;
+	padding:0 40px;
+	}
+#carrito{
+	background:url(../images/cart.jpg) no-repeat;
+	width:300px;
+	height:73px;
+	float:right;
+	text-align:center;
+	margin-top: 20px;
+	margin-right: 55px;
+	margin-bottom: 0;
+	margin-left: 0;
+	}
+	
+#subcate {
+   float:left; width:33%; color:#FF3300; font-weight:bold; background-color:#CCCCCC
+  }
+  
+  #subcate a {
+   color:#FF3300;
+  }
+  
+  .oferta {
+  color:#FF3300;
+  font-weight:bold;
+  }
+	
+p{
+	color:#9b9b9b;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	}
+
+body,td,th {
+	color:#9b9b9b;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+}
+
+a {
+	color:#db7916;
+	font-family:Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	}
+
+a:hover {
+	color:#db7916;
+	font-family:Arial, Helvetica, sans-serif;
+	text-decoration:underline;
+	}
+	
+.content{
+	width:800px;
+	float:left;
+	padding:10px 20px;
+	}
+	
+#carrito p{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	}
+
+#dark{
+	color:#572700;
+	}
+	
+
+#green{
+	color:#637133;
+	}
+
+ 
+#maincol{
+ float: right; 
+ display:inline; 
+ position: relative; 
+ width:; 
+ }
+ 
+ #cuadro49 {
+	float:left;
+	width:49%;
+	background-color:#E0E0E0;
+	height:200px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+	text-align:left;
+  }
+  
+  #cuadro49 label{
+	display:block;
+	margin-bottom:10px;
+	color:#555555;
+}
+
+#cuadro49 label span{
+	display:block;
+	float:left;
+	padding-right:3px;
+	width:100px;
+	text-align:right;
+	font-weight:bold;
+}
+  #cuadro2 {
+   float:left; 
+   width:2%;
+   height:200px;
+  }
+ 
+#footer{
+ margin:0 auto 20px auto;
+ clear:both;
+ background:url(../images/footer.jpg) center no-repeat;
+ height:25px;
+ } 
+ 
+  
+#footer p{
+	color: #999;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-align:center;
+	margin:0;
+	padding:0;
+ }
+ 
+
+.clearfix:after {
+ content: "."; 
+ display: block; 
+height: 0; 
+ clear: both; 
+ visibility: hidden;
+ }
+ 
+.clearfix{display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .clearfix{height: 1%;}
+.clearfix{display: block;}
+/* End hide from IE-mac */  
+
+
+ 
+ /*printer styles*/ 
+ @media print{ 
+/*hide the left column when printing*/ 
+#leftcol{display:none;} 
+#twocols, #maincol{width:100%; float:none;}
+}
+
+
+/* para los form */
+	div.box{
+	border:solid 1px #c6cfe1;
+	background:#dfe4ee;
+	padding:10px;
+	color:#333333;
+	margin-bottom:20px;
+	font-size:11px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	text-align:left;
+}
+div.box h2 {
+	font-size:13px;
+	color:#000000;
+	padding-bottom:4px;
+}
+div.box p{padding-bottom:14px;}
+
+div.box input .input-text{
+	border:1px solid #3b6e22;
+	color:#666666;
+	width:140px;
+	font-size:11px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	
+}
+
+.boxform
+{
+	color:#666666;
+	font-size:11px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	
+}
+.formsub
+{
+	color:#FFFFFF;
+	font-size:12px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	padding:6px;
+	background-color:#333333;
+	margin-bottom:7px;
+	margin-top:10px;
+	
+}
+
+div.box label{
+	display:block;
+	margin-bottom:5px;
+	color:#555555;
+}
+
+div.box label span{
+	display:block;
+	float:left;
+	padding-right:6px;
+	width:140px;
+	text-align:right;
+	font-weight:bold;
+}
+.spacer{margin-left:125px; 
+	margin-bottom:10px;
+	font-size:11px;
+	color:#555555;
+}
+
+
+.roja {
+	color: #FF0000;
+	font-weight: bold;
+}
+.azul {
+	color: #003399;
+	font-weight: bold;
+}
+
+.celdastit {
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	background-color:#EA5F24;
+}
+.celdasnor {
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #272360;
+}
+.celdasnara {
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color:#333333;
+}
+.tablacon {
+   border-color:#000033
+}

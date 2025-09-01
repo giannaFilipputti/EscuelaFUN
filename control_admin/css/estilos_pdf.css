@@ -1,0 +1,183 @@
+@charset "utf-8";
+body  {
+		font-size:11px;
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+    	background: #666666;
+    	margin: 0; /* es recomendable ajustar a cero el margen y el relleno del elemento body para lograr la compatibilidad con la configuración predeterminada de los diversos navegadores */
+    	padding: 0;
+    	text-align: center; /* esto centra el contenedor en los navegadores IE 5*. El texto se ajusta posteriormente con el valor predeterminado de alineación a la izquierda en el selector #container */
+    	color: #000000;
+    }
+	img {
+		border:none;
+		}
+    .twoColLiqLtHdr #container { 
+    	width: 80%;  /* esto creará un contenedor con el 80% del ancho del navegador */
+    	background: #FFFFFF;
+    	margin: 0 auto; /* los márgenes automáticos (conjuntamente con un ancho) centran la página */
+    	border: 1px solid #000000;
+    	text-align: left; 
+    } 
+    .twoColLiqLtHdr #header { 
+    	background:#2AACAA url(../body/head_bg.jpg) left top no-repeat; 
+    	padding: 10px 10px 40px 10px;
+		height:125px;  
+    } 
+    
+	.twoColLiqLtHdr #header h1 {
+    	margin: 0; 
+    	padding: 10px 0; 
+    }
+    
+  
+    .twoColLiqLtHdr #sidebar1 {
+    	float: left; 
+    	width: 24%; 
+    	background: #EBEBEB; 
+    	padding: 15px 0; 
+    }
+    .twoColLiqLtHdr #sidebar1 h3, .twoColLiqLtHdr #sidebar1 p {
+    	margin-left: 10px; 
+    	margin-right: 10px;
+    }
+    
+   
+    .twoColLiqLtHdr #mainContent { 
+    	margin: 0 20px 0 26%; 
+    } 
+    .twoColLiqLtHdr #footer { 
+    	padding: 0 10px; 
+    	background:#DDDDDD;
+    } 
+    .twoColLiqLtHdr #footer p {
+    	margin: 0;
+    	padding: 10px 0; 
+    }
+    
+    /* Varias clases diversas para su reutilización */
+    .fltrt {
+    	float: right;
+    	margin-left: 8px;
+    }
+    .fltlft { 
+    	float: left;
+    	margin-right: 8px;
+    }
+    .clearfloat { 
+    	clear:both;
+        height:0;
+        font-size: 1px;
+        line-height: 0px;
+    }
+	
+/* para los form */
+	div.box{
+	border:solid 1px #c6cfe1;
+	background:#dfe4ee;
+	padding:10px;
+	color:#333333;
+	margin-bottom:20px;
+}
+div.box h2 {
+	font-size:13px;
+	color:#000000;
+	padding-bottom:4px;
+}
+div.box p{padding-bottom:14px;}
+
+div.box input .input-text{
+	border:1px solid #3b6e22;
+	color:#666666;
+	width:180px;
+}
+
+div.box label{
+	display:block;
+	margin-bottom:10px;
+	color:#555555;
+}
+
+div.box label span{
+	display:block;
+	float:left;
+	padding-right:6px;
+	width:120px;
+	text-align:right;
+	font-weight:bold;
+}
+div.box .fmr_sub {
+	padding:4px;
+	background:#666;
+	color:#fff;
+	}
+
+.boxima {
+	float:left;
+	width:49%;
+	}
+.spacer{margin-left:125px; 
+	margin-bottom:10px;
+	font-size:11px;
+	color:#555555;
+}
+
+/* para las subidas de imagenes */
+	#loader{
+   visibility:hidden;
+}
+
+
+#f1_upload_process{
+   z-index:100;
+   visibility:hidden;
+   position:absolute;
+   text-align:center;
+   width:400px;
+}
+.roja {
+	color:#F00;
+	font-weight:bold;}
+.imgtit {
+	font-size:12px;
+	font-weight:bold;
+	display:block;
+	color:#F00;}
+.imgstit {
+	font-weight:bold;
+	display:block;
+}
+.botonup {
+	margin-left:126px;
+	padding-top:20px;
+}
+	
+	td.dragHandle {
+    
+}
+.nodrop {
+	padding:3px;
+	background:#CCC;
+	font-size:+2;}
+
+td.showDragHandle {
+	background-image: url(../images/updown2.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	cursor: move;
+}
+
+.especi0 {
+	display:block;
+	margin-bottom:10px;
+	color:#555555;
+	width:48%;
+	float:left;
+}
+
+	*.visible {
+display:block;
+}
+
+*.oculto {
+ display:none; 
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+    <title>Prueba CKEDITOR</title> 
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" /> 
+    <script type="text/javascript" src="../ckeditor.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+     <script type="text/javascript"> 
+			
+			window.onload = function()
+{
+	// Listen to the double click event.
+	if ( window.addEventListener )
+		document.body.addEventListener( 'dblclick', onDoubleClick, false );
+	else if ( window.attachEvent )
+		document.body.attachEvent( 'ondblclick', onDoubleClick );
+
+};
+
+function onDoubleClick( ev )
+{
+	// Get the element which fired the event. This is not necessarily the
+	// element to which the event has been attached.
+	var element = ev.target || ev.srcElement;
+
+	// Find out the div that holds this element.
+	element = element.parentNode;
+
+	if ( element.nodeName.toLowerCase() == 'div'
+		 && ( element.className.indexOf( 'editable' ) != -1 ) )
+		replaceDiv( element );
+}
+
+var editor;
+
+function replaceDiv( div )
+{
+	if ( editor )
+		editor.destroy();
+
+	editor = CKEDITOR.replace( div );
+}
+
+
+           
+            </script> 
+</head> 
+<body> 
+<form id="formulario1" action="editor_show.php" method="post"> 
+    <div id="txtarea1" name="txtarea1" class="editable" cols="80" rows="10"><p> 
+    <span style="font-size: 72px;">HOLA</span> CAR<span style="background-color: rgb(255, 215, 0);">ACOLA</span></p></div> 
+           
+    <input type="text" id="txtiarea1" name="txtiarea1"> 
+<button id="benviar" type="submit">Enviar</button> 
+</form> 
+    <button id="bmostrar">Mostrar</button> 
+    <button id="bocultar">Ocultar TODO</button> 
+    <button id="bocultaredit">Ocultar EDITOR</button> 
+    <button id="bmostraredit">Mostrar EDITOR</button> 
+<div id="result"></div> 
+<script type="text/javascript"> 
+$("#bocultar").click(function () { 
+   
+  $("#cke_txtarea1").hide(1000); 
+}); 
+$("#bmostrar").click(function () { 
+   
+  $("#cke_txtarea1").show(1000); 
+}); 
+$("#bocultaredit").click(function () { 
+    editor.destroy(); 
+}); 
+$("#bmostraredit").click(function () { 
+                editor = CKEDITOR.replace( 'txtarea1', 
+                    { 
+                        skin : 'office2003' 
+                    }); 
+}); 
+$("#benviar").click(function () { 
+    $("#txtiarea1").val($("#txtarea1").html()); 
+}); 
+
+$('#formulario1').submit(function()  { 
+  // Enviamos el formulario usando AJAX 
+        $.ajax({ 
+            type: 'POST', 
+            url: $(this).attr('action'), 
+            data: $(this).serialize(), 
+            // Mostramos un mensaje con la respuesta de PHP 
+            success: function(data) { 
+                $('#result').html(data); 
+            } 
+        })         
+        return false; 
+    });  
+</script> 
+</body> 
+</html>  
