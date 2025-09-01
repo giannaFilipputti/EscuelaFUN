@@ -269,6 +269,7 @@ if (!empty($curso)) {
     <?php include('cierre.php'); ?>
 
     <script type="text/javascript">
+        /*
         $('#pais_alumno').change(function() {
             console.log("llega aqui");
             var pais = $(this).val();
@@ -289,6 +290,8 @@ if (!empty($curso)) {
                 $('#region_alumno').addAttr('required');
             }
         });
+*/
+
 
 
 

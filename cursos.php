@@ -91,7 +91,7 @@ if (!empty($escuela)) {
 
 
                 <h4 class="mt-lg-7 mt-4">Cursos Disponibles</h4>
-                <p style="text-align: right;"><a href="clinicas.php" class="btn btn-danger">Ver Clínicas Presenciales </a></p>
+                <!-- <p style="text-align: right;"><a href="clinicas.php" class="btn btn-danger">Ver Clínicas Presenciales </a></p> -->
                 <?php if (!empty($escuela)) { ?>
 
                     <h5 class="mt-lg-7 mt-4"><?php echo $area[0]['escuela']; ?></h5>
