@@ -296,7 +296,7 @@ if ($authj->logueado == 1) {
                                         <small> PRECIO </small><br>
                                         <?php if ($getPrecio == 'precio1') { ?>
                                             <span class="uk-h1"> <?php if ($cursos[0][$getPrecio] == 0) {
-                                                                        echo "GRATUITO";
+                                                                        //echo "GRATUITO";
                                                                     } else {
                                                                         echo number_format($cursos[0][$getPrecio], 0, ',', '.') . " USD$";
                                                                     }  ?> </span>
@@ -304,7 +304,7 @@ if ($authj->logueado == 1) {
                                             <hr>
                                         <?php } else { ?>
                                             <span class="uk-h1"> <?php if ($cursos[0][$getPrecio] == 0) {
-                                                                        echo "GRATUITO";
+                                                                        // echo "GRATUITO";
                                                                     } else {
                                                                         echo number_format($cursos[0][$getPrecio], 0, ',', '.') . " clp";
                                                                     }  ?> </span>
@@ -313,7 +313,7 @@ if ($authj->logueado == 1) {
                                             <?php if ($getPrecio != 'precio') { ?>
                                                 <small>PÚBLICO GENERAL </small><br>
                                                 <span class="uk-h4 text-muted" style="text-decoration: line-through;"> <?php if ($cursos[0]['precio'] == 0) {
-                                                                                                                            echo "GRATUITO";
+                                                                                                                            // echo "GRATUITO";
                                                                                                                         } else {
                                                                                                                             echo number_format($cursos[0]['precio'], 0, ',', '.') . " clp";
                                                                                                                         }  ?> </span>
@@ -328,10 +328,10 @@ if ($authj->logueado == 1) {
                                 <?php } else { ?>
 
                                     <p class="my-3 text-center">
-                                        <small> PRECIO AFILIADO FECHIDA </small><br>
+                                        <small> PRECIO AFILIADO FUN </small><br>
 
                                         <span class="uk-h1"> <?php if ($cursos[0]['precio2'] == 0) {
-                                                                    echo "GRATUITO";
+                                                                    // echo "GRATUITO";
                                                                 } else {
                                                                     echo number_format($cursos[0]['precio2'], 0, ',', '.') . " clp";
                                                                 }  ?> </span>
@@ -339,7 +339,7 @@ if ($authj->logueado == 1) {
                                         <hr>
                                         <small>PRECIO ESTUDIANTES NACIONALES </small><br>
                                         <span class="uk-h4"> <?php if ($cursos[0]['precio3'] == 0) {
-                                                                    echo "GRATUITO";
+                                                                    // echo "GRATUITO";
                                                                 } else {
                                                                     echo number_format($cursos[0]['precio3'], 0, ',', '.') . " clp";
                                                                 }  ?> </span>
@@ -347,7 +347,7 @@ if ($authj->logueado == 1) {
                                         <hr>
                                         <small>PÚBLICO GENERAL </small><br>
                                         <span class="uk-h4"> <?php if ($cursos[0]['precio'] == 0) {
-                                                                    echo "GRATUITO";
+                                                                    // echo "GRATUITO";
                                                                 } else {
                                                                     echo number_format($cursos[0]['precio'], 0, ',', '.') . " clp";
                                                                 }  ?> </span>
