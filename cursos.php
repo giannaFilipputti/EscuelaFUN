@@ -137,7 +137,7 @@ if (!empty($escuela)) {
 
                                 <a href="<?php echo $link_mod ?>">
                                     <div class="course-path-card <?php echo $clase_mod ?>">
-                                        <img src="../assets/images/course/<?php echo $Elem['id'] ?>.jpg?v=12" alt="">
+                                        <img src="../assets/images/course/<?php echo $Elem['id'] ?>.jpg?v=14" alt="">
                                         <div class="course-path-card-contents">
                                             <h3> <?php echo $Elem['titulo'] ?> </h3>
                                             <!--<p> <?php echo $Elem['descripcion'] ?>
@@ -222,7 +222,7 @@ if (!empty($escuela)) {
 
                                 <a href="<?php echo $link_mod ?>">
                                     <div class="course-path-card <?php echo $clase_mod ?>">
-                                        <img src="../assets/images/course/<?php echo $Elem['id'] ?>.jpg?v=12" alt="">
+                                        <img src="../assets/images/course/<?php echo $Elem['id'] ?>.jpg?v=14" alt="">
                                         <div class="course-path-card-contents">
                                             <h3> <?php echo $Elem['titulo'] ?> </h3>
                                             <!--<p> <?php echo $Elem['descripcion'] ?>
