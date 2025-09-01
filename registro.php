@@ -127,16 +127,9 @@ if (!empty($curso)) {
 
                                     </div>
 
-                                    <div id="div_rut">
 
-                                        <span class="icon text-gray-600">Rut</span>
 
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" oninput="checkRut(this)" maxlength="10" name="rut_alumno" id="rut_alumno" required="required">
-                                        </div>
-                                    </div>
-
-                                    <div id="div_dni" class="oculto">
+                                    <div id="div_dni">
 
                                         <span class="icon text-gray-600">DNI o Documento de identidad</span>
 
