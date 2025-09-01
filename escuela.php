@@ -47,26 +47,14 @@ $scripts = "none";
                     </div>
 
                     <p>
-                        La Escuela de Especialización Deportiva FENAUDE es un proyecto en alianza entre la Federación Nacional de Deporte Universitario y Capacitaciones PULPRO con el objetivo de profesionalizar el desarrollo deportivo desde todas las áreas que hacen vida dentro de las 5 disciplinas de los deportes del ámbito universitario, desde las bases hasta el nivel competitivo.
+                        La Escuela de Especialización Deportiva FUN es un proyecto en alianza entre la Federación Uruguaya de Natación y Capacitaciones PULPRO con el objetivo de profesionalizar el desarrollo deportivo desde todas las áreas que hacen vida dentro de las 5 disciplinas.
                     </p>
 
-                    <p>
-                        La escuela cuenta con 3 áreas:
-                    </p>
-                    <ul>
-                        <li>Escuela para entrenadores.</li>
-                        <li>Escuela para jueces y árbitros.</li>
-                        <li>Escuela para dirigentes deportivos.</li>
-                    </ul>
-                    <p>
-                        Cada área cuenta con <a href="cursos.php">cursos</a> específicos para profundizar el conocimiento y unificar criterios en torno a las necesidades identificadas a lo largo de los últimos años alineados con el gran proyecto nacional liderado por la FENAUDE, cada ciclo de capacitación incorporará nuevos contenidos para profundizar en cada una de las áreas de cada disciplinas.
-                    </p>
+
                     <p>
                         Le deseamos éxito en su capacitación.
                     </p>
-                    <p>
-                        Durante todo el proceso de capacitación asumiremos el compromiso de acompañarle, para dudas y consultas sobre la plataforma agradecemos comunicarse por los teléfonos +56 9 4294 4264 o por el email info@pulpro.com
-                    </p>
+
 
                 </div>
 
