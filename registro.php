@@ -188,6 +188,8 @@ if (!empty($curso)) {
 
                                     </div>
 
+                                    <!--
+
                                     <div id="div_tipo">
                                         <span class="icon text-gray-600">Tipo de Usuario</span>
 
@@ -205,6 +207,8 @@ if (!empty($curso)) {
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="club_alumno" id="club_alumno">
                                     </div>
+
+                                        -->
 
 
 
