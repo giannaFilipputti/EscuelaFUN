@@ -42,7 +42,7 @@ $scripts = "none";
 
                 <div class="">
                     <div class="mb-4">
-                        <h2 class="mb-0">Escuela de Especialización Deportiva FENAUDE <span class="uk-text-bold"></span></h2>
+                        <h2 class="mb-0">Escuela de Especialización Deportiva FUN <span class="uk-text-bold"></span></h2>
                         <!--<p class="my-0">Ingresa al sistema para iniciar tu curso.</p>-->
                     </div>
 
