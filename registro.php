@@ -208,7 +208,7 @@ if (!empty($curso)) {
                                         <input type="text" class="form-control" name="club_alumno" id="club_alumno">
                                     </div>
 
-                                        -->
+                                       
 
 
 
@@ -236,6 +236,8 @@ if (!empty($curso)) {
                                         </select>
 
                                     </div>
+
+                                     -->
 
 
 
