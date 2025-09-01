@@ -1,6 +1,6 @@
 <div class="footer">
     <div class="container">
-    <!--
+        <!--
         <div uk-grid>
             <div class="uk-width-1-3@m">
                 <a href="home.html" class="uk-logo">
@@ -46,7 +46,7 @@
         <hr>-->
         <div class="uk-grid-collapse" uk-grid>
             <div class="uk-width-expand@s uk-first-column">
-                <p>© 2023 <strong>Pulpro</strong>. Todos los derechos reservados. </p>
+                <p>© <?php echo date("Y"); ?> <strong>Pulpro</strong>. Todos los derechos reservados. </p>
             </div>
             <div class="uk-width-auto@s">
                 <nav class="footer-nav-icon">
