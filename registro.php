@@ -47,7 +47,7 @@ if (!empty($curso)) {
             <form action="action_registro.php?action=registro" method="post">
                 <br><br><br><br>
 
-                <h1 class="h3 mb-2 text-gray-800">Registro en Escuela de Especialización Deportiva FENAUDE</h1>
+                <h1 class="h3 mb-2 text-gray-800">Registro en Escuela de Especialización FUN</h1>
 
                 <p class="mb-4">Por favor ingrese sus datos para el proceso de inscripción.</p>
                 <?php if (!empty($curso)) { ?>
