@@ -11,63 +11,62 @@ class Capitulo
 
 	public $modulo;
 	public $pag = 1;
-	public $limit = 10;
+	public $limit = 100;
 	public $orden = "";
 	public $tiporden = "";
 	public $total_pages;
-	
+
 	public $img_ppl;
-	
+
 	public $cnt_img_ppl;
-	
+
 	private $interfaz;
 
 
-    public function __construct($interfaz=0)
-    {
-       $this->interfaz = $interfaz;
-       $this->tabla = "com_cursos_mod_cap";
-	
-    }
-	
+	public function __construct($interfaz = 0)
+	{
+		$this->interfaz = $interfaz;
+		$this->tabla = "com_cursos_mod_cap";
+	}
 
-	
 
-	public function agregar($id,$caso,$modulo,$titulo,$titulo_eng,$autor,$orden,$resena_autor,$revista, $duracion,$tema,$sub_menu,$video)
+
+
+	public function agregar($id, $caso, $modulo, $titulo, $titulo_eng, $autor, $orden, $resena_autor, $revista, $duracion, $tema, $sub_menu, $video)
 	{
 		/*if (empty($caso)) {
 			header("Location: capitulos.php?id=".$modulo);
 		} else {*/
 
-			$db = Db::getInstance();
-			
+		$db = Db::getInstance();
 
-			$data = array(
-				'id' => $id,
-				'caso' => $caso,
-				'modulo' => $modulo,
-				'titulo' => $titulo,
-				'titulo_eng' => $titulo_eng,
-				'autor' => $autor,
-				'resena_autor' => $resena_autor,
-				'revista' => $revista,
-				'duracion' => $duracion,
-				'tema' => $tema,
-				'orden' => $orden,
-				'estado' => "1",
-				'sub_menu' => $sub_menu,
-				'video' => $video
-			);
-			$db->insert($this->tabla, $data);
 
-			$duracioncap = $this->getDuracionAllMod($modulo);
-			$mod = Modulo::actualizarDuracion($modulo, $duracioncap);
+		$data = array(
+			'id' => $id,
+			'caso' => $caso,
+			'modulo' => $modulo,
+			'titulo' => $titulo,
+			'titulo_eng' => $titulo_eng,
+			'autor' => $autor,
+			'resena_autor' => $resena_autor,
+			'revista' => $revista,
+			'duracion' => $duracion,
+			'tema' => $tema,
+			'orden' => $orden,
+			'estado' => "1",
+			'sub_menu' => $sub_menu,
+			'video' => $video
+		);
+		$db->insert($this->tabla, $data);
+
+		$duracioncap = $this->getDuracionAllMod($modulo);
+		$mod = Modulo::actualizarDuracion($modulo, $duracioncap);
 		//}
 	}
 
 
 
-	public function modificar($id,$caso,$modulo,$titulo,$titulo_eng,$autor,$resena_autor,$revista,$duracion,$tema,$sub_menu,$video)
+	public function modificar($id, $caso, $modulo, $titulo, $titulo_eng, $autor, $resena_autor, $revista, $duracion, $tema, $sub_menu, $video)
 	{
 		if (empty($id)) {
 			header("Location: capitulos_mod.php?id=" . $modulo);
@@ -96,7 +95,6 @@ class Capitulo
 			$duracioncap = $this->getDuracionAllMod($modulo);
 			//echo "Duracion cap: ".$duracioncap;
 			$mod = Modulo::actualizarDuracion($modulo, $duracioncap);
-
 		}
 	}
 
@@ -114,11 +112,11 @@ class Capitulo
 		}
 	}
 
-	
+
 	public function modificarOrden($orden, $id)
 	{
 		if (empty($id)) {
-			header("Location: capitulos.php?id=".$id);
+			header("Location: capitulos.php?id=" . $id);
 		} else {
 
 			$db = Db::getInstance();
@@ -129,13 +127,14 @@ class Capitulo
 		}
 	}
 
-	public function getDuracionAllMod($modulo) {
+	public function getDuracionAllMod($modulo)
+	{
 		$db = Db::getInstance();
 		$sql = "SELECT SUM(duracion) AS dur FROM " . $this->tabla . " WHERE id > :id";
 		$bind = array(
 			':id' => '0'
 		);
-		
+
 		if (!empty($modulo)) {
 			$sql .= " AND modulo = :modulo";
 			$bind[":modulo"] = $modulo;
@@ -152,10 +151,9 @@ class Capitulo
 			$row_p = $db1->fetchAll($sql, $bind);
 			return $row_p[0]['dur'];
 		}
-
 	}
 
-	
+
 	public function getAll($modulo = "")
 	{
 
@@ -165,7 +163,7 @@ class Capitulo
 		$bind = array(
 			':id' => '0'
 		);
-		
+
 		if (!empty($modulo)) {
 			$sql .= " AND modulo = :modulo";
 			$bind[":modulo"] = $modulo;
@@ -215,7 +213,7 @@ class Capitulo
 			$this->row = $row_p;
 		}
 	}
-	
+
 	public function getLastOrden()
 	{
 		$db = Db::getInstance();
@@ -261,7 +259,7 @@ class Capitulo
 		$bind = array(
 			':id' => $id
 		);
-		
+
 		$cont = $db->run($sql, $bind);
 		if ($cont == 0) {
 			$row_p = array();
@@ -273,100 +271,102 @@ class Capitulo
 			$this->row = $row_p;
 		}
 	}
-	
-	public function getOne ($id)
+
+	public function getOne($id)
 	{
-				$db = Db::getInstance();
-				$sql = "SELECT * FROM ".$this->tabla." WHERE id = :id LIMIT 1";
-    			$bind = array(
-        		':id' => $id
-    			);
-		        
-				$cont = $db->run($sql, $bind);
-				if ($cont == 0) {
-					$row_p = "";
-				} else {
-					
-					$db1 = Db::getInstance();
-					$row_p = $db1->fetchAll($sql, $bind);
-				  
-					$this->row = $row_p;
-				}
+		$db = Db::getInstance();
+		$sql = "SELECT * FROM " . $this->tabla . " WHERE id = :id LIMIT 1";
+		$bind = array(
+			':id' => $id
+		);
+
+		$cont = $db->run($sql, $bind);
+		if ($cont == 0) {
+			$row_p = "";
+		} else {
+
+			$db1 = Db::getInstance();
+			$row_p = $db1->fetchAll($sql, $bind);
+
+			$this->row = $row_p;
+		}
 	}
 
-	
 
-	public function eliminar($id,$curso,$ref){
-		if(empty($id)){
-			header("Location: capitulos.php?id=".$ref."&ref=".$curso);
-		}else{
+
+	public function eliminar($id, $curso, $ref)
+	{
+		if (empty($id)) {
+			header("Location: capitulos.php?id=" . $ref . "&ref=" . $curso);
+		} else {
 			$db = Db::getInstance();
 			$data = array(
 				'id' => $id
 			);
 
-			$db->delete($this->tabla,"id = :id",$data);
+			$db->delete($this->tabla, "id = :id", $data);
 		}
 	}
 
-	public function eliminarByMod($id,$ref){
-		if(empty($id)){
+	public function eliminarByMod($id, $ref)
+	{
+		if (empty($id)) {
 			header("Location: modulos.php?id=" . $ref);
-		}else{
+		} else {
 			$db = Db::getInstance();
 			$data = array(
 				'id' => $id
 			);
 
-			$db->delete($this->tabla,"modulo = :id",$data);
+			$db->delete($this->tabla, "modulo = :id", $data);
 		}
 	}
 
-	public function porcentajeAlumno($id,$salida=0) {
+	public function porcentajeAlumno($id, $salida = 0)
+	{
 
-			$sql = "SELECT com_ponencias_ima.id FROM com_ponencias_ima
+		$sql = "SELECT com_ponencias_ima.id FROM com_ponencias_ima
 			LEFT JOIN com_capitulo_contenidos ON com_capitulo_contenidos.id = com_ponencias_ima.ponencia
 			LEFT JOIN com_cursos_mod_cap ON com_capitulo_contenidos.capitulo = com_cursos_mod_cap.id";
-		 	$sql .= " WHERE com_cursos_mod_cap.id = :capitulo";
-		 					
-						$bind = array(
-        					':capitulo' => $id
-    					);
-    		$sql .= " ORDER BY com_ponencias_ima.orden";
-    		$db = Db::getInstance();
-			$cont = $db->run($sql, $bind);
+		$sql .= " WHERE com_cursos_mod_cap.id = :capitulo";
 
-			$sql1 = "SELECT com_alumnos_diapos.id FROM com_alumnos_diapos
+		$bind = array(
+			':capitulo' => $id
+		);
+		$sql .= " ORDER BY com_ponencias_ima.orden";
+		$db = Db::getInstance();
+		$cont = $db->run($sql, $bind);
+
+		$sql1 = "SELECT com_alumnos_diapos.id FROM com_alumnos_diapos
 			LEFT JOIN com_ponencias_ima ON com_alumnos_diapos.diapo = com_ponencias_ima.id
 			LEFT JOIN com_capitulo_contenidos ON com_capitulo_contenidos.id = com_ponencias_ima.ponencia
 			LEFT JOIN com_cursos_mod_cap ON com_capitulo_contenidos.capitulo = com_cursos_mod_cap.id";
-		 	$sql1 .= " WHERE com_cursos_mod_cap.id = :capitulo AND alumno = :alumno AND NOT (com_alumnos_diapos.diapo <=> NULL)";
-		 					
-						$bind1 = array(
-        					':capitulo' => $id,
-        					':alumno' => $this->alumno
-    					);
-    		$db1 = Db::getInstance();
-			$cont1 = $db1->run($sql1, $bind1);
-			$porcentaje = ($cont1 * 100) / $cont;
-			if ($salida==0) {
-				$this->porcentaje = $porcentaje;
-			} else {
-				return round($porcentaje);
-			}
+		$sql1 .= " WHERE com_cursos_mod_cap.id = :capitulo AND alumno = :alumno AND NOT (com_alumnos_diapos.diapo <=> NULL)";
 
-			
+		$bind1 = array(
+			':capitulo' => $id,
+			':alumno' => $this->alumno
+		);
+		$db1 = Db::getInstance();
+		$cont1 = $db1->run($sql1, $bind1);
+		$porcentaje = ($cont1 * 100) / $cont;
+		if ($salida == 0) {
+			$this->porcentaje = $porcentaje;
+		} else {
+			return round($porcentaje);
+		}
 	}
 
-	public function registrarAcceso() {
+	public function registrarAcceso()
+	{
 
 		$db = Db::getInstance();
 		$sql = "SELECT * FROM com_alumnos_capitulo WHERE alumno = :alumno AND capitulo = :capitulo LIMIT 1";
 		$bind = array(
-		':alumno' => $this->alumno,
-		':capitulo' => $this->row[0]['id']
+			':alumno' => $this->alumno,
+			':capitulo' => $this->row[0]['id']
 		);
-		
+
 		$cont = $db->run($sql, $bind);
 		if ($cont == 0) {
 
@@ -379,32 +379,30 @@ class Capitulo
 			//print_r($data1);
 			$db1->insert('com_alumnos_capitulo', $data1);
 		} else {
-			
+
 			// no pasa nada si ya se registró el acceso
 		}
+	}
 
-}
+	static function verificarAcceso($alumno, $capitulo)
+	{
 
-static function verificarAcceso($alumno, $capitulo) {
-
-	$db = Db::getInstance();
-	$sql = "SELECT * FROM com_alumnos_capitulo WHERE alumno = :alumno AND capitulo = :capitulo LIMIT 1";
-	$bind = array(
-	':alumno' => $alumno,
-	':capitulo' => $capitulo
-	);
-/*
+		$db = Db::getInstance();
+		$sql = "SELECT * FROM com_alumnos_capitulo WHERE alumno = :alumno AND capitulo = :capitulo LIMIT 1";
+		$bind = array(
+			':alumno' => $alumno,
+			':capitulo' => $capitulo
+		);
+		/*
 	echo $sql;
 	print_r($bind);*/
-	
-	$cont = $db->run($sql, $bind);
-	return $cont;
-	
 
-}
+		$cont = $db->run($sql, $bind);
+		return $cont;
+	}
 
 
-public function agregarLink($capitulo, $desde, $hasta, $ancho, $alto, $url, $orden)
+	public function agregarLink($capitulo, $desde, $hasta, $ancho, $alto, $url, $orden)
 	{
 		$db = Db::getInstance();
 		$this->id = $db->lastInsertId();
@@ -457,12 +455,4 @@ public function agregarLink($capitulo, $desde, $hasta, $ancho, $alto, $url, $ord
 			$this->rowL = $row_p;
 		}
 	}
-
-
-
-	
-	
-	
-	
-		
 }
