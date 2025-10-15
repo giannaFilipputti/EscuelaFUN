@@ -3,13 +3,9 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-
 require_once('api_zoom/jwt.php');
-
 require_once 'lib/autoloader.class.php';
-
 require_once 'lib/init.class.php';
-
 require 'vendor/autoload.php';
 
 use Sendpulse\RestApi\ApiClient;
