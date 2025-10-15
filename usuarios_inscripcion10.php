@@ -1,5 +1,4 @@
 <?php
-
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
@@ -23,9 +22,6 @@ $curso = 1;
 
 
 $codigo = "84954598245";
-
-
-
 
 $reporte = new Curso();
 $report = $reporte->reporteAlumnos_3($curso, $estado);
