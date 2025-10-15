@@ -23,10 +23,10 @@ define('PATH_TO_ATTACH_FILE', __FILE__);
 
 //$codigo ="83490073117";
 //$evento = 23;
-$curso = 28;
+$curso = 1;
 
 
-$codigo = "88979953947";
+$codigo = "84954598245";
 
 
 
@@ -134,9 +134,10 @@ foreach ($report as $Elem) {
 
 
 
-
+    $registrar = 0;
 
     //$porciones = explode(" ", $pizza);
+    //if ($Elem['id'] == 3540) {
     if (empty($Elem['joinurl']) or $Elem['joinurl'] == 'x') {
 
         echo "Entra " . $Elem['region'] . " - " . $Elem['id'] . " " . $Elem['ape1'] . " " . $Elem['email'] . "<br>";
@@ -191,10 +192,13 @@ foreach ($report as $Elem) {
             echo $joinurl;
 
             echo "<br>";
+
+            $registrar = 1;
         }
     } else {
         $joinurl = $Elem['joinurl'];
     }
+    //}
 
     if (empty($Elem['clave'])) {
         $ingreso = "no";
@@ -202,41 +206,44 @@ foreach ($report as $Elem) {
         $ingreso = "si";
     }
 
-    //if ($Elem['id'] == 2157) {
+    if ($registrar == 1) {
 
-    $SPApiClient = new ApiClient(API_USER_ID, API_SECRET, new FileStorage());
+        $SPApiClient = new ApiClient(API_USER_ID, API_SECRET, new FileStorage());
 
-    /*
+        /*
 			 * Example: Get Mailing Lists
 			 */
-    //var_dump($SPApiClient->listAddressBooks());
+        //var_dump($SPApiClient->listAddressBooks());
 
-    /*
+        /*
 			 * Example: Add new email to mailing lists
 			 */
-    $bookID = 1592651;
-    $emails = array(
-        array(
-            'email' => $Elem['email'],
-            'variables' => array(
-                'joinurl' => $joinurl
+        $bookID = 1631655;
+        $emails = array(
+            array(
+                'email' => $Elem['email'],
+                'variables' => array(
+                    'joinurl' => $joinurl,
+                    'nombre' => $Elem['nombre'],
+                    'apellido' => $Elem['ape1'] . " " . $Elem['ape2']
+                )
             )
-        )
-    );
-    $additionalParams = array(
-        'joinurl' => $joinurl,
-    );
-    // With confirmation
-    $respuesta = $SPApiClient->addEmails($bookID, $emails);
-    $SPApiClient = Null;
+        );
+        $additionalParams = array(
+            'joinurl' => $joinurl,
+            'nombre' => $Elem['nombre'],
+            'apellido' => $Elem['ape1'] . " " . $Elem['ape2']
+        );
+        // With confirmation
+        $respuesta = $SPApiClient->addEmails($bookID, $emails);
+        $SPApiClient = Null;
 
-    print_r($respuesta);
-    echo "<br><br>";
-    //}
+        print_r($respuesta);
+        echo "<br><br>";
+    }
 
 
 
-    /* se termina de guardar en el mailing list*/
 
 
 
