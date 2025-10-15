@@ -225,11 +225,22 @@ $cap = new Capitulo();
                             <div class="bg-success" style="margin-top: ;50px; padding: 10px;"><?php echo $cursos[0]['comentario']; ?></div>
                         <?php } ?>
 
-                        <?php if ($id == 5) {  ?>
+                        <?php if ($id == 1) {  ?>
                             <br><br>
                             <p style="text-align:center">
-                                <a href="evento_zoom.php?evento=<?php echo $id; ?>" class="btn btn-default" target="_blank">ENTRAR A CONVERSATORIO</a>
-                            <p class="rojo">Si tienes problemas para acceder a la reunión por favor comunicarse via email a info@pulpro.com o via whatsapp al +56 9 3352 9666 para asistencia técnica.</p>
+                                <a href="<?php echo $inscrito[0]['joinurl']; ?>" class="btn btn-default" target="_blank">ENTRAR AL WEBINAR</a>
+                            <p>Miercoles 15 de octubre a las 20:30</p>
+                            <p class="rojo">Si tienes problemas para acceder a la reunión por favor comunicarse via whatsapp al +56 9 4294 4264 para asistencia técnica.</p>
+
+                            </p>
+                        <?php }  ?>
+
+                        <?php if ($id == 2) {  ?>
+                            <br><br>
+                            <p style="text-align:center">
+                                <a href="<?php echo $inscrito[0]['joinurl']; ?>" class="btn btn-default" target="_blank">ENTRAR AL WEBINAR</a>
+                            <p>Jueves 16 de octubre a las 20:30</p>
+                            <p class="rojo">Si tienes problemas para acceder a la reunión por favor comunicarse via whatsapp al +56 9 4294 4264 para asistencia técnica.</p>
 
                             </p>
                         <?php }  ?>
