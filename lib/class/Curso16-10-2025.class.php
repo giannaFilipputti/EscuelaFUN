@@ -167,7 +167,7 @@ class Curso
 
 
 		/*echo $sql;
-		print_r($bind);*/
+	print_r($bind);*/
 
 
 
@@ -1106,11 +1106,10 @@ fclose($file);*/
 
 		$db = Db::getInstance();
 
-		$sql = "SELECT core.id, core.nombre,core.ape1,core.ape2,core.email,core.dni,core.telefono,core.clave,core.genero,core.tipouser,reg.region,cocu.titulo AS cursos, cure.estado, cure.estadopago, cure.validprerequisitos, cure.idpago, cure.floworder, cocu.acred_pre, cocu.ciclo, cure.porcentaje AS porcCurso, cure.fecini, cure.fecfin, cure.joinurl, pais.pais FROM com_registro core 
+		$sql = "SELECT core.id, core.nombre,core.ape1,core.ape2,core.email,core.dni,core.telefono,core.clave,core.genero,core.tipouser,reg.region,cocu.titulo AS cursos, cure.estado, cure.estadopago, cure.validprerequisitos, cure.idpago, cure.floworder, cocu.acred_pre, cocu.ciclo, cure.porcentaje AS porcCurso, cure.fecini, cure.fecfin, cure.joinurl FROM com_registro core 
 		JOIN com_cursos_registro cure on cure.usuario = core.id 
 		JOIN com_cursos_2022 cocu on cocu.id = cure.curso
 		LEFT JOIN com_regiones reg on reg.id = core.region
-		LEFT JOIN com_paises pais on pais.id = core.pais
 		WHERE cocu.id = :id " . $sqlAdd;
 		$sql .= " GROUP BY core.id, cure.estado, cure.estadopago, cure.validprerequisitos, cure.idpago, cure.floworder, cocu.acred_pre, cocu.ciclo, cure.porcentaje, cure.fecini, cure.fecfin, cure.joinurl ORDER BY core.id ASC";
 
@@ -1415,24 +1414,5 @@ fclose($file);*/
 		$db->run($sql);
 		$row_p = $db->fetchAll($sql);
 		return $row_p;
-	}
-
-
-	static function getModuloAvance($modulo, $user)
-	{
-		$db = Db::getInstance();
-
-		$sql = "SELECT comco.duracion,comco.porcentaje 
-        FROM com_modulo_registro comco
-        WHERE comco.modulo = :modulo AND comco.usuario = :user
-        ORDER BY comco.duracion DESC limit 1";
-		$bind = array(
-			':modulo' => $modulo,
-			':user' => $user
-		);
-
-		$db->run($sql, $bind);
-		$row_p = $db->fetchAll($sql, $bind);
-		return $row_p[0];
 	}
 }
