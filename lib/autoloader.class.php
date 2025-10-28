@@ -60,14 +60,14 @@ function exception_handler($e)
     $elerror .= 'Trace: ' . $e->getTraceAsString();
     $elerror .= $_SERVER['REQUEST_URI'];
 
-    $para      = 'gianna@tba.es';
+    $para      = 'giannalia@gmail.com';
     $titulo    = 'Error';
     $mensaje   = $elerror;
     $cabeceras = 'From: giannalia@gmail.com' . "\r\n" .
         'Reply-To: giannalia@gmail.com' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
 
-    mail($para, $titulo, $mensaje, $cabeceras);
+    //mail($para, $titulo, $mensaje, $cabeceras);
 
     echo 'Code: ' . $e->getCode() . LB;
     echo 'Error: ' . $e->getMessage() . LB;
