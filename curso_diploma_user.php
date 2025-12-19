@@ -176,7 +176,7 @@ if (!empty($asiste)) {
     
                     
     
-                        <td width=\"650\" align=\"left\"><span style=\"font-family:'Conv_GothamRnd-Book;font-size:13px;color:#666666;padding-left:445px\">Santiago, " . date('d', $fecha) . " de " . mostrarMes(date('m', $fecha)) . " de " . date('Y', $fecha) . "</span></td>
+                        <td width=\"650\" align=\"left\"><span style=\"font-family:'Conv_GothamRnd-Book;font-size:13px;color:#666666;padding-left:445px\">Montevideo, " . date('d', $fecha) . " de " . mostrarMes(date('m', $fecha)) . " de " . date('Y', $fecha) . "</span></td>
     
                         </tr>
                         <tr>
@@ -199,10 +199,10 @@ if (!empty($asiste)) {
             } else   if ($curso[0]['id'] == 28) {
                 $ciudad = "Puerto Montt";
             } else {
-                $ciudad = "Santiago";
+                $ciudad = "Montevideo";
             }
 
-            $html = "<html><head><title>CICLO CAPACITACIONES FECHIDA 2022-2023</title><style>@font-face {
+            $html = "<html><head><title>CICLO CAPACITACIONES FUN 2025</title><style>@font-face {
         font-family: 'Gotham-Bold';
         src: url('fonts/GothamBold.eot');
         src: local('☺'), url('fonts/GothamBold.woff') format('woff'), url('fonts/GothamBold.ttf') format('truetype'), url('fonts/GothamBold.svg') format('svg');
