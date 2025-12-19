@@ -108,7 +108,7 @@ if (!empty($asiste)) {
         }
 
         if ($curso[0]['id'] >= 1 && $curso[0]['id'] <= 5) {
-            $html = "<html><head><title>CICLO CAPACITACIONES FECHIDA 2020</title><style>@font-face {
+            $html = "<html><head><title>CICLO CAPACITACIONES FUN 2025</title><style>@font-face {
         font-family: 'Gotham-Bold';
         src: url('fonts/GothamBold.eot');
         src: local('☺'), url('fonts/GothamBold.woff') format('woff'), url('fonts/GothamBold.ttf') format('truetype'), url('fonts/GothamBold.svg') format('svg');

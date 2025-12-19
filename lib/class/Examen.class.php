@@ -1118,7 +1118,7 @@ class Examen
 	{
 		$tempDir = $_SERVER['DOCUMENT_ROOT'] . "/qr/";
 
-		$codeContents = 'https://fechida.c-pulpro.com/qr.php?codigo=' . $codigo;
+		$codeContents = 'https://fun.c-pulpro.com/qr.php?codigo=' . $codigo;
 		$nameContents = $codigo;
 		$this->codigoValid = $codigo;
 
@@ -1139,9 +1139,7 @@ class Examen
 		//echo '<img src="'.$urlRelativeFilePath.'" />';
 	}
 
-	public function descargarDiploma($usuario, $certificado)
-	{
-	}
+	public function descargarDiploma($usuario, $certificado) {}
 
 	public function guardarEncuesta($ep1, $ep2, $ep3, $ep4, $ep5, $ep6, $ep7, $epr, $modulo, $curso, $alumno)
 	{
