@@ -328,36 +328,8 @@ if ($authj->logueado == 1) {
                                 <?php } else { ?>
 
                                     <p class="my-3 text-center">
-                                        <small> PRECIO AFILIADO FUN </small><br>
-
-                                        <span class="uk-h1"> <?php if ($cursos[0]['precio2'] == 0) {
-                                                                    // echo "GRATUITO";
-                                                                } else {
-                                                                    echo number_format($cursos[0]['precio2'], 0, ',', '.') . " clp";
-                                                                }  ?> </span>
-                                        <br>
-                                        <hr>
-                                        <small>PRECIO ESTUDIANTES NACIONALES </small><br>
-                                        <span class="uk-h4"> <?php if ($cursos[0]['precio3'] == 0) {
-                                                                    // echo "GRATUITO";
-                                                                } else {
-                                                                    echo number_format($cursos[0]['precio3'], 0, ',', '.') . " clp";
-                                                                }  ?> </span>
-                                        <br>
-                                        <hr>
-                                        <small>PÚBLICO GENERAL </small><br>
-                                        <span class="uk-h4"> <?php if ($cursos[0]['precio'] == 0) {
-                                                                    // echo "GRATUITO";
-                                                                } else {
-                                                                    echo number_format($cursos[0]['precio'], 0, ',', '.') . " clp";
-                                                                }  ?> </span>
-                                        <br>
-                                        <hr>
-                                    </p>
-                                    <p class="my-3">
-                                        <small> PÚBLICO INTERNACIONAL </small><br>
-                                        <span class="uk-h4"> USD$ <?php echo $cursos[0]['precio1'] ?> </span>
-                                        <!--<s class="uk-h6 ml-1 text-muted"> $32.99 </s>-->
+                                        <small> PRECIO ESTUDIANTE INTERNACIONAL </small><br>
+                                        <span class="uk-h1"> USD$ <?php echo $cursos[0]['precio1'] ?> </span>
                                     </p>
 
                                 <?php } ?>

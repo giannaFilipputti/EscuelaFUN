@@ -193,7 +193,7 @@ if (empty($idpago) && empty($cursos)) {
                             <div class="course-thumbnail">
                                 <!--<img src="../assets/images/course/f<?php echo $cursos[0]['idC'] ?>.png?v=2" alt="">
                             <a class="play-button-trigger show" href="#trailer-modal" uk-toggle> </a>-->
-                                <br<br>
+                                <br><br>
                             </div>
 
                             <!-- video demo model -->
@@ -263,7 +263,7 @@ if (empty($idpago) && empty($cursos)) {
                                             <p>Forma de pago * </p>
 
                                             <div class="row row-cols-1 row-cols-lg-1">
-                                                <?php if ($authj->rowff['pais'] == 19) { ?>
+                                                <?php if ($authj->rowff['pais'] == 19 && 1==2) { ?>
 
                                                     <div class="col">
 
@@ -357,11 +357,16 @@ if (empty($idpago) && empty($cursos)) {
                                             <div class="col">
 
 
-
+                                                    <?php if (!empty($getUltPago['id']) && $getUltPago['estadopago'] == 0 && $getUltPago['tipopago'] == 3) { ?>
+                                                        <?php } else { ?>
 
                                                 <div class="text-center">
                                                     <button type="sumbit" class="btn-reg">PAGAR</button>
                                                 </div>
+                                                <?php } ?>
+                                                <br>
+                                                <br>
+                                                <br>
                                             </div>
                                         </form>
                                     <?php } ?>
