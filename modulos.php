@@ -225,7 +225,7 @@ $cap = new Capitulo();
                             <div class="bg-success" style="margin-top: ;50px; padding: 10px;"><?php echo $cursos[0]['comentario']; ?></div>
                         <?php } ?>
 
-                        <?php if ($id == 1) {  ?>
+                        <?php if ($id == 1 && 1==2) {  ?>
                             <br><br>
                             <p style="text-align:center">
                                 <a href="<?php echo $inscrito[0]['joinurl']; ?>" class="btn btn-default" target="_blank">ENTRAR AL WEBINAR</a>
@@ -235,7 +235,7 @@ $cap = new Capitulo();
                             </p>
                         <?php }  ?>
 
-                        <?php if ($id == 2) {  ?>
+                        <?php if ($id == 2 && 1==2) {  ?>
                             <br><br>
                             <p style="text-align:center">
                                 <a href="<?php echo $inscrito[0]['joinurl']; ?>" class="btn btn-default" target="_blank">ENTRAR AL WEBINAR</a>
