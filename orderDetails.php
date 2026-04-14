@@ -59,6 +59,19 @@ if (!empty($_GET['paymentID']) && !empty($_GET['payerID']) && !empty($_GET['toke
     $elUser  = $pid;
     $elUser1 = $authj->rowff['id'];
 
+    // LOG de diagnóstico
+    file_put_contents(__DIR__ . '/paypal_log.txt',
+        date('Y-m-d H:i:s') . " | status=" . $response['status']
+        . " | paypalState=" . $paypalState
+        . " | paypalAmount=" . $paypalAmount
+        . " | elUser(pid)=" . $elUser
+        . " | elUser1(authId)=" . $elUser1
+        . " | paymentID=" . $paymentID
+        . " | paymentRaw=" . $paymentResult
+        . "\n",
+        FILE_APPEND
+    );
+
     $fechoy = date('Y-m-d H:i:s');
 
     $data4 = array(
@@ -82,10 +95,27 @@ if (!empty($_GET['paymentID']) && !empty($_GET['payerID']) && !empty($_GET['toke
     $total   = 0;
     $cursosT = "";
 
+    // LOG: cantidad de cursos preincritos encontrados
+    $numCursos = is_array($cursos) ? count($cursos) : 0;
+    file_put_contents(__DIR__ . '/paypal_log.txt',
+        date('Y-m-d H:i:s') . " | getCursosPreinscritos para usuario=" . $elUser1 . " => " . $numCursos . " curso(s)\n",
+        FILE_APPEND
+    );
+
     foreach ($cursos as $Elem) {
         $cursosT      .= $Elem['titulo'] . "<br>";
         $prerequisitos = Curso::validPrerequisitos($Elem['idC'], $elUser1);
         $data4['estado'] = '0';
+
+        // LOG por curso
+        file_put_contents(__DIR__ . '/paypal_log.txt',
+            date('Y-m-d H:i:s') . " | curso=" . $Elem['idC'] . " (" . $Elem['titulo'] . ")"
+            . " | acred_pre=" . $Elem['acred_pre']
+            . " | prereq_estado=" . ($prerequisitos['estado'] ?? 'N/A')
+            . " | data4_estado_before=" . $data4['estado']
+            . "\n",
+            FILE_APPEND
+        );
 
         if ($response['status'] == 2) {
             if (($Elem['acred_pre'] == 1 && $prerequisitos['estado'] == 1) || $Elem['acred_pre'] == 0) {
@@ -101,6 +131,12 @@ if (!empty($_GET['paymentID']) && !empty($_GET['payerID']) && !empty($_GET['toke
                 $data4['fecfin'] = date("Y-m-d H:i:s", $acred_hasta1);
             }
 
+            // LOG antes de actualizar
+            file_put_contents(__DIR__ . '/paypal_log.txt',
+                date('Y-m-d H:i:s') . " | actualizarPago curso=" . $Elem['idC'] . " usuario=" . $elUser1
+                . " | data4=" . json_encode($data4) . "\n",
+                FILE_APPEND
+            );
             Curso::actualizarPago($Elem['idC'], $elUser1, $data4, $elUser);
 
             // Agregar a Sendpulse
