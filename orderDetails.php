@@ -213,7 +213,7 @@ if (!empty($_GET['paymentID']) && !empty($_GET['payerID']) && !empty($_GET['toke
 	   Muchas gracias por su participacion.<br><br>
 
 Cordialmente,<br><br>
-Alianza FECHIDA - Capacitaciones Pulpro
+Alianza FUN - Capacitaciones Pulpro
 <br />&nbsp;<br />&nbsp;<br />&nbsp;<br />
 		</font>
 
@@ -242,7 +242,7 @@ Alianza FECHIDA - Capacitaciones Pulpro
         }
         $mail->From     = $mailemail;
         $mail->FromName = "PULPRO";
-        $mail->Subject  = $app_title;
+        $mail->Subject  = "Pago Procesado";
         $mail->AltBody  = $app_title;
         $mail->IsHTML(true);
         $mail->MsgHTML($nota);
