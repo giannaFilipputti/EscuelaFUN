@@ -326,7 +326,7 @@ if (empty($idpago) && empty($cursos)) {
                                                         $productName = "Inscripcion Curso Escuela de Especialización";
                                                         $currency = "USD";
                                                         $productPrice = $total;
-                                                        $productId =  $id;
+                                                        $productId = $getUltPago['id'];
                                                         $orderNumber = $authj->rowff['id'] . "-" . uniqid();
                                                         ?>
 

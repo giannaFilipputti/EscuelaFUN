@@ -1,6 +1,6 @@
 <?php
 define('ProPayPal', 1);
-if(ProPayPal){
+if (ProPayPal) {
     define("PayPalClientId", "ASwjkyKliKo10t3CwQs22TDOdXDQla_F4sJdYdtZLcMSUlxAI0Fv7wWqFPFkxK6xSFpwsT-gHaEkVoiK");
     define("PayPalSecret", "EDIF4YIm_f7s1hWATH-cPy4J8NxcoQiO7T2q3gUvgb8xb8Uasseqt2exUcGOaRJ-mx7yWakR5HEZGhFL");
     define("PayPalBaseUrl", "https://api.paypal.com/v1/");
@@ -11,4 +11,3 @@ if(ProPayPal){
     define("PayPalBaseUrl", "https://api.sandbox.paypal.com/v1/");
     define("PayPalENV", "sandbox");
 }
-?>
