@@ -1,6 +1,14 @@
-<?php require_once 'lib/autoloader.class.php';
+<?php
+file_put_contents(__DIR__ . '/paypal_log.txt', date('Y-m-d H:i:s') . " | SCRIPT_START GET=" . json_encode($_GET) . "\n", FILE_APPEND);
+
+require_once 'lib/autoloader.class.php';
+file_put_contents(__DIR__ . '/paypal_log.txt', date('Y-m-d H:i:s') . " | after autoloader\n", FILE_APPEND);
+
 require_once 'lib/init.class.php';
+file_put_contents(__DIR__ . '/paypal_log.txt', date('Y-m-d H:i:s') . " | after init\n", FILE_APPEND);
+
 require_once 'lib/auth.php';
+file_put_contents(__DIR__ . '/paypal_log.txt', date('Y-m-d H:i:s') . " | after auth\n", FILE_APPEND);
 
 require 'vendor/autoload.php';
 
