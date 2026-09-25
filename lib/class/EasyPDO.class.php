@@ -4,6 +4,7 @@
  *
  * @author ou
  */
+#[\AllowDynamicProperties]
 class EasyPDO extends PDO
 {
     protected $_fetchMode = PDO::FETCH_ASSOC;

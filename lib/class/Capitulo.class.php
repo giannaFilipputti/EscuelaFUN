@@ -1,4 +1,5 @@
 <?php
+#[\AllowDynamicProperties]
 class Capitulo
 {
 	public $id;

@@ -13,6 +13,7 @@
 
 require(__DIR__ . "/Config.class.php");
 
+#[\AllowDynamicProperties]
 class FlowApi {
 	
 	protected $apiKey;

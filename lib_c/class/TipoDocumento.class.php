@@ -1,4 +1,5 @@
 <?php
+#[\AllowDynamicProperties]
 class TipoDocumento
 {
 	public $id;

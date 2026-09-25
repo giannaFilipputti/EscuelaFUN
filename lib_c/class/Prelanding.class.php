@@ -1,5 +1,6 @@
 <?php 
 
+#[\AllowDynamicProperties]
 class Prelanding{
     public $id;
     public $curso;

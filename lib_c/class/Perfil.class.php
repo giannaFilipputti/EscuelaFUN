@@ -1,4 +1,5 @@
 <?php
+#[\AllowDynamicProperties]
 class Perfil
 {
     public $id;

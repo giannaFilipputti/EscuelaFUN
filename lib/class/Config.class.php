@@ -21,6 +21,7 @@
  	"BASEURL" => "https://fechida.c-pulpro.com" //Registre aquí la URL base en su página donde instalará el cliente
  );
  
+ #[\AllowDynamicProperties]
  class Config {
  	
 	static function get($name) {

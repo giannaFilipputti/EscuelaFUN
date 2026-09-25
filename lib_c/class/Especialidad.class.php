@@ -1,5 +1,6 @@
 <?php
 
+#[\AllowDynamicProperties]
 class Especialidad
 {
     public $id;

@@ -7,6 +7,7 @@
  *  ));
  *  echo $video->thumbnail;
  */
+#[\AllowDynamicProperties]
 class VimeoThumbnail {
   public $video_url;
   public $video_id;

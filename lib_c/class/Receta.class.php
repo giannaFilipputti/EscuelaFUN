@@ -1,4 +1,5 @@
 <?php
+#[\AllowDynamicProperties]
 class Receta
 {
 	public $id;

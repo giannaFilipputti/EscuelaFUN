@@ -1,4 +1,5 @@
 <?php
+#[\AllowDynamicProperties]
 class Color
 {
 	public $id;

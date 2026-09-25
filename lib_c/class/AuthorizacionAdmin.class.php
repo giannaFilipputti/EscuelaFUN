@@ -1,5 +1,6 @@
 <?php
 
+#[\AllowDynamicProperties]
 class AuthorizacionAdmin
 {
 	public $login = "";

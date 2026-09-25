@@ -1,4 +1,5 @@
 <?php
+#[\AllowDynamicProperties]
 class Presenciales
 {
 	public $id;

@@ -1,4 +1,5 @@
 <?php
+#[\AllowDynamicProperties]
 class Qr
 {
 	public $id;

@@ -1,4 +1,5 @@
 <?php
+#[\AllowDynamicProperties]
 class Diapositiva
 {
 	public $id;

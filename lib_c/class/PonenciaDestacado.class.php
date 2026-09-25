@@ -1,5 +1,6 @@
 <?php
 
+#[\AllowDynamicProperties]
 class PonenciaDestacado
 {
     public $id;

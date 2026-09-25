@@ -1,5 +1,6 @@
 <?php
 
+#[\AllowDynamicProperties]
 class Evento
 {
 	public $id;

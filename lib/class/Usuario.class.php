@@ -1,4 +1,5 @@
 <?php
+#[\AllowDynamicProperties]
 class Usuario
 {
 	public $id;

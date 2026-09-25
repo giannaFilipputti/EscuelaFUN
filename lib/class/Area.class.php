@@ -1,4 +1,5 @@
 <?php
+#[\AllowDynamicProperties]
 class Area
 {
 	public $id;
