@@ -306,6 +306,12 @@ class easyphpthumbnail {
 	 * Class constructor
 	 *
 	 */	
+	// PHP 8.1 depreca el parámetro $num_points; en PHP 7.4 es obligatorio
+	private function filledPolygon($image, $points, $color) {
+		if (PHP_VERSION_ID >= 80000) return imagefilledpolygon($image, $points, $color);
+		return imagefilledpolygon($image, $points, count($points) / 2, $color);
+	}
+
 	function __construct() {
 	
 		$this->Thumbsize								= 160;
@@ -596,10 +602,10 @@ class easyphpthumbnail {
 		array_push($points_tr,$this->size[0]-$clipsize,0);
 		array_push($points_bl,$clipsize,$this->size[1]);
 		if ($this->Clipcorner[2]) {$random1=rand(0,1);$random2=rand(0,1);$random3=rand(0,1);$random4=rand(0,1);} else {$random1=1;$random2=1;$random3=1;$random4=1;}
-		if ($this->Clipcorner[3] && $random1) {imagefilledpolygon($this->im,$points_tl,$bgcolor);}
-		if ($this->Clipcorner[4] && $random2) {imagefilledpolygon($this->im,$points_bl,$bgcolor);}		
-		if ($this->Clipcorner[5] && $random3) {imagefilledpolygon($this->im,$points_tr,$bgcolor);}		
-		if ($this->Clipcorner[6] && $random4) {imagefilledpolygon($this->im,$points_br,$bgcolor);}
+		if ($this->Clipcorner[3] && $random1) {$this->filledPolygon($this->im,$points_tl,$bgcolor);}
+		if ($this->Clipcorner[4] && $random2) {$this->filledPolygon($this->im,$points_bl,$bgcolor);}		
+		if ($this->Clipcorner[5] && $random3) {$this->filledPolygon($this->im,$points_tr,$bgcolor);}		
+		if ($this->Clipcorner[6] && $random4) {$this->filledPolygon($this->im,$points_br,$bgcolor);}
 		imagerectangle($this->im,0,0,$this->size[0]-1,$this->size[1]-1,$bgcolor);
 
 	}
