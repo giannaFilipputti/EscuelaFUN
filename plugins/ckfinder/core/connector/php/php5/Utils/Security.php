@@ -32,7 +32,7 @@ class CKFinder_Connector_Utils_Security
      */
     public function getRidOfMagicQuotes()
     {
-        if (CKFINDER_CONNECTOR_PHP_MODE<6 && get_magic_quotes_gpc()) {
+        if (CKFINDER_CONNECTOR_PHP_MODE<6 && function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc()) {
             if (!empty($_GET)) {
                 $this->stripQuotes($_GET);
             }
@@ -43,7 +43,7 @@ class CKFinder_Connector_Utils_Security
                 $this->stripQuotes($_COOKIE);
             }
             if (!empty($_FILES)) {
-                while (list($k,$v) = each($_FILES)) {
+                foreach (array_keys($_FILES) as $k) {
                     if (isset($_FILES[$k]['name'])) {
                         $this->stripQuotes($_FILES[$k]['name']);
                     }
@@ -64,7 +64,7 @@ class CKFinder_Connector_Utils_Security
     {
         if (is_array($var)) {
             if ($depth++<$howDeep) {
-                while (list($k,$v) = each($var)) {
+                foreach (array_keys($var) as $k) {
                     $this->stripQuotes($var[$k], $depth, $howDeep);
                 }
             }
