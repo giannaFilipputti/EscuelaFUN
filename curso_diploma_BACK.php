@@ -187,7 +187,9 @@ if (!empty($asiste)) {
 		$options->set('defaultFont', 'Gotham-Bold');
 
         $dompdf = new Dompdf();
-        $dompdf->set_paper('letter', '');
+        $dompdf->setPaper('letter');
+        // dompdf 2.x bloquea archivos locales fuera del chroot (img/diplomas, qr/)
+        $dompdf->getOptions()->setChroot(__DIR__);
         $dompdf->loadHtml($html);
         $dompdf->render();
         $dompdf->stream("diploma_1.pdf");
