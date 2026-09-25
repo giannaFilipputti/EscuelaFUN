@@ -134,7 +134,7 @@ class EasyPDO extends PDO
     public function insert($table, $data)
     {
         $fieldNames = array_keys($data);
-        $sql = "INSERT INTO `$table` (" . implode($fieldNames, ", ") . ") VALUES (:" . implode($fieldNames, ", :") . ");";
+        $sql = "INSERT INTO `$table` (" . implode(", ", $fieldNames) . ") VALUES (:" . implode(", :", $fieldNames) . ");";
         $bind = array();
         foreach($fieldNames as $field) {
             $bind[":$field"] = $data[$field];
@@ -417,7 +417,7 @@ class EasyPDO extends PDO
     /**
      * begin transaction
      */
-    public function beginTransaction()
+    public function beginTransaction(): bool
     {
         if (!$this->_transactionCount++) {
             return parent::beginTransaction();
@@ -428,7 +428,7 @@ class EasyPDO extends PDO
     /**
      * commit transaction
      */
-    public function commit()
+    public function commit(): bool
     {
         if (!--$this->_transactionCount) {
             return parent::commit();
@@ -438,7 +438,7 @@ class EasyPDO extends PDO
     /**
      * rollback transaction
      */
-    public function rollback()
+    public function rollback(): bool
     {
         if (--$this->_transactionCount) {
             $this->exec('ROLLBACK TO trans'.($this->_transactionCount + 1));

@@ -29,7 +29,7 @@ class InputFilter {
 	  * @param int $attrMethod - 0= allow just user-defined, 1= allow all but user-defined
 	  * @param int $xssAuto - 0= only auto clean essentials, 1= allow clean blacklisted tags/attr
 	  */
-	function inputFilter($tagsArray = array(), $attrArray = array(), $tagsMethod = 0, $attrMethod = 0, $xssAuto = 1) {		
+	function __construct($tagsArray = array(), $attrArray = array(), $tagsMethod = 0, $attrMethod = 0, $xssAuto = 1) {		
 		// make sure user defined arrays are in lowercase
 		for ($i = 0; $i < count($tagsArray); $i++) $tagsArray[$i] = strtolower($tagsArray[$i]);
 		for ($i = 0; $i < count($attrArray); $i++) $attrArray[$i] = strtolower($attrArray[$i]);
@@ -288,7 +288,7 @@ class InputFilter {
 	  */
 	function quoteSmart($source, &$connection) {
 		// strip slashes
-		if (get_magic_quotes_gpc()) $source = stripslashes($source);
+		// magic_quotes_gpc no existe desde PHP 5.4 (eliminado en PHP 8)
 		// quote both numeric and text
 		$source = $this->escapeString($source, $connection);
 		return $source;

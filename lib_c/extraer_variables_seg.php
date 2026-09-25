@@ -102,7 +102,7 @@ function getRealIP()
 
 
 
-   if( $_SERVER['HTTP_X_FORWARDED_FOR'] != '' )
+   if( !empty($_SERVER['HTTP_X_FORWARDED_FOR']) )
 
    {
 
@@ -142,7 +142,7 @@ function getRealIP()
 
       reset($entries);
 
-      while (list(, $entry) = each($entries))
+      foreach ($entries as $entry)
 
       {
 
