@@ -105,7 +105,7 @@ function startUpload(id, conditional)
 		</script>
        
         
-  <div id="imagenes"><? include('capitulos_descargas_zip.php') ;?>
+  <div id="imagenes"><?php /* capitulos_descargas_zip.php se eliminó (dependía de mysql_* e includes/conn.php) */ ?>
         </div>
  
     <br /><br />

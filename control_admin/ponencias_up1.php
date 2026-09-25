@@ -61,7 +61,7 @@ $(document).ready(function() {
        <div class="box">
        <div><input id="img_upload" name="img_upload" type="file" /></div>
         <br class="clearfloat" />
-        <div id="imagenes1"><?php include('ponencias_imagen.php') ;?>
+        <div id="imagenes1"><?php /* ponencias_imagen.php se eliminó (dependía de mysql_* e includes/conn.php) */ ?>
         </div>
         
        

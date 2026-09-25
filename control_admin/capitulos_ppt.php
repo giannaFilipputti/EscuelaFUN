@@ -104,7 +104,7 @@ function startUpload(id, conditional)
 		</script>
        
         
-  <div id="imagenes"><? include('capitulos_descargas_ppt.php') ;?>
+  <div id="imagenes"><?php /* capitulos_descargas_ppt.php se eliminó (dependía de mysql_* e includes/conn.php) */ ?>
         </div>
  
     <br /><br />
