@@ -199,7 +199,7 @@ class InputFilter {
 			$attrSubSet = explode('=', trim($attrSet[$i]));
 			list($attrSubSet[0]) = explode(' ', $attrSubSet[0]);
 			// removes all "non-regular" attr names AND also attr blacklisted
-			if ((!eregi("^[a-z]*$",$attrSubSet[0])) || (($this->xssAuto) && ((in_array(strtolower($attrSubSet[0]), $this->attrBlacklist)) || (substr($attrSubSet[0], 0, 2) == 'on')))) 
+			if ((!preg_match('/^[a-z]*$/i', $attrSubSet[0])) || (($this->xssAuto) && ((in_array(strtolower($attrSubSet[0]), $this->attrBlacklist)) || (substr($attrSubSet[0], 0, 2) == 'on')))) 
 				continue;
 			// xss attr value filtering
 			if ($attrSubSet[1]) {
@@ -249,9 +249,9 @@ class InputFilter {
 		// url decode
 		$source = html_entity_decode($source, ENT_QUOTES, "ISO-8859-1");
 		// convert decimal
-		$source = preg_replace('/&#(\d+);/me',"chr(\\1)", $source);				// decimal notation
+		$source = preg_replace_callback('/&#(\d+);/m', function ($m) { return chr($m[1]); }, $source);				// decimal notation
 		// convert hex
-		$source = preg_replace('/&#x([a-f0-9]+);/mei',"chr(0x\\1)", $source);	// hex notation
+		$source = preg_replace_callback('/&#x([a-f0-9]+);/mi', function ($m) { return chr(hexdec($m[1])); }, $source);	// hex notation
 		return $source;
 	}
 
@@ -303,9 +303,9 @@ class InputFilter {
 	  */	
 	function escapeString($string, &$connection) {
 		// depreciated function
-		if (version_compare(phpversion(),"4.3.0", "<")) mysql_escape_string($string);
+		// mysql_escape_string()/mysql_real_escape_string() no existen desde PHP 7;
 		// current function
-		else mysql_real_escape_string($string);
+		// su resultado nunca se usaba, así que se devuelve el string sin cambios.
 		return $string;
 	}
 } 
