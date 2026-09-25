@@ -53,6 +53,7 @@ if (!class_exists('PEAR')) {
 * @package  Spreadsheet_Excel_Writer
 */
 
+#[\AllowDynamicProperties]
 class Spreadsheet_Excel_Writer_BIFFwriter extends PEAR
 {
     /**

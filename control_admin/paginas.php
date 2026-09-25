@@ -88,7 +88,7 @@ include('header.php');
 
 
                 });
-              editor.setData('<?php echo preg_replace("[\n|\r|\n\r]", ' ', utf8_encode($row['contenido']));  ?>');
+              editor.setData('<?php echo preg_replace("[\n|\r|\n\r]", ' ', mb_convert_encoding((string) ($row['contenido']), 'UTF-8', 'ISO-8859-1'));  ?>');
 
               // Just call CKFinder.SetupCKEditor and pass the CKEditor instance as the first argument.
               // The second parameter (optional), is the path for the CKFinder installation (default = "/ckfinder/").

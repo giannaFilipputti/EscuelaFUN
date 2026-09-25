@@ -16,7 +16,7 @@ $workbook->send('masterclass1.xls');
 //$worksheet->setInputEncoding('UTF8');
 
 // Creating a worksheet
-$worksheet = $workbook->addWorksheet(utf8_decode('Usuarios'));
+$worksheet = $workbook->addWorksheet(mb_convert_encoding((string) ('Usuarios'), 'ISO-8859-1', 'UTF-8'));
 
 
 // The actual data
@@ -162,21 +162,21 @@ foreach ($usuario->row as $Elem) {
 	}
 
 
-	$worksheet->write($fila, 0, utf8_decode($Elem['ape1']));
-	$worksheet->write($fila, 1, utf8_decode($Elem['ape2']));
-	$worksheet->write($fila, 2, utf8_decode($Elem['nombre']));
-	$worksheet->write($fila, 3, utf8_decode($Elem['email']));
+	$worksheet->write($fila, 0, mb_convert_encoding((string) ($Elem['ape1']), 'ISO-8859-1', 'UTF-8'));
+	$worksheet->write($fila, 1, mb_convert_encoding((string) ($Elem['ape2']), 'ISO-8859-1', 'UTF-8'));
+	$worksheet->write($fila, 2, mb_convert_encoding((string) ($Elem['nombre']), 'ISO-8859-1', 'UTF-8'));
+	$worksheet->write($fila, 3, mb_convert_encoding((string) ($Elem['email']), 'ISO-8859-1', 'UTF-8'));
 	$worksheet->write($fila, 4, date('d-m-Y', $fecha));
-	$worksheet->write($fila, 5, utf8_decode($perfil1));
-	$worksheet->write($fila, 6, utf8_decode($perfil0));
-	$worksheet->write($fila, 7, utf8_decode($p));
-	$worksheet->write($fila, 8, utf8_decode($pro));
-	$worksheet->write($fila, 9, utf8_decode($Elem['p1']));
-	$worksheet->write($fila, 10, utf8_decode($Elem['p2']));
-	$worksheet->write($fila, 11, utf8_decode($Elem['p3']));
-	$worksheet->write($fila, 12, utf8_decode($Elem['p4']));
+	$worksheet->write($fila, 5, mb_convert_encoding((string) ($perfil1), 'ISO-8859-1', 'UTF-8'));
+	$worksheet->write($fila, 6, mb_convert_encoding((string) ($perfil0), 'ISO-8859-1', 'UTF-8'));
+	$worksheet->write($fila, 7, mb_convert_encoding((string) ($p), 'ISO-8859-1', 'UTF-8'));
+	$worksheet->write($fila, 8, mb_convert_encoding((string) ($pro), 'ISO-8859-1', 'UTF-8'));
+	$worksheet->write($fila, 9, mb_convert_encoding((string) ($Elem['p1']), 'ISO-8859-1', 'UTF-8'));
+	$worksheet->write($fila, 10, mb_convert_encoding((string) ($Elem['p2']), 'ISO-8859-1', 'UTF-8'));
+	$worksheet->write($fila, 11, mb_convert_encoding((string) ($Elem['p3']), 'ISO-8859-1', 'UTF-8'));
+	$worksheet->write($fila, 12, mb_convert_encoding((string) ($Elem['p4']), 'ISO-8859-1', 'UTF-8'));
 	//$worksheet->write($fila, 13, utf8_decode($row_men3['p5']));
-	$worksheet->write($fila, 13, utf8_decode($Elem['p6']));
+	$worksheet->write($fila, 13, mb_convert_encoding((string) ($Elem['p6']), 'ISO-8859-1', 'UTF-8'));
 	$fila++;
 }
 

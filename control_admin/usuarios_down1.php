@@ -173,9 +173,9 @@ foreach ($usuario->row as $Elem) {
 
 		$modulos[] = $ElemMod['id'];
 
-		$worksheet->write(0, $col1, utf8_decode('Examen ' . $ElemMod['titulo']));
+		$worksheet->write(0, $col1, mb_convert_encoding((string) ('Examen ' . $ElemMod['titulo']), 'ISO-8859-1', 'UTF-8'));
 		$col1++;
-		$worksheet->write(0, $col1, utf8_decode('Acceso ' . $ElemMod['titulo']));
+		$worksheet->write(0, $col1, mb_convert_encoding((string) ('Acceso ' . $ElemMod['titulo']), 'ISO-8859-1', 'UTF-8'));
 
 		$examen[$ElemMod['id']] = "";
 		$exam = new UsuarioExam();
@@ -201,14 +201,14 @@ foreach ($usuario->row as $Elem) {
 	}
 
 
-	$worksheet->write($fila, 0, utf8_decode($Elem['ape1']));
-	$worksheet->write($fila, 1, utf8_decode($Elem['ape2']));
-	$worksheet->write($fila, 2, utf8_decode($Elem['nombre']));
+	$worksheet->write($fila, 0, mb_convert_encoding((string) ($Elem['ape1']), 'ISO-8859-1', 'UTF-8'));
+	$worksheet->write($fila, 1, mb_convert_encoding((string) ($Elem['ape2']), 'ISO-8859-1', 'UTF-8'));
+	$worksheet->write($fila, 2, mb_convert_encoding((string) ($Elem['nombre']), 'ISO-8859-1', 'UTF-8'));
 	$worksheet->write($fila, 3, $Elem['email']);
 	$worksheet->write($fila, 4, date('d-m-Y', $fecha));
-	$worksheet->write($fila, 5, utf8_decode($perfil1));
-	$worksheet->write($fila, 6, utf8_decode($perfil0));
-	$worksheet->write($fila, 7, utf8_decode($pro));
+	$worksheet->write($fila, 5, mb_convert_encoding((string) ($perfil1), 'ISO-8859-1', 'UTF-8'));
+	$worksheet->write($fila, 6, mb_convert_encoding((string) ($perfil0), 'ISO-8859-1', 'UTF-8'));
+	$worksheet->write($fila, 7, mb_convert_encoding((string) ($pro), 'ISO-8859-1', 'UTF-8'));
 	$worksheet->write($fila, 8, $Elem['mailing']);
 	$worksheet->write($fila, 9, $mailing1);
 	$worksheet->write($fila, 10, $datos);

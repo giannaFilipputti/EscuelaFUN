@@ -55,6 +55,7 @@ if (!class_exists('OLE_PPS_File')) {
 * @package  Spreadsheet_Excel_Writer
 */
 
+#[\AllowDynamicProperties]
 class Spreadsheet_Excel_Writer_Workbook extends Spreadsheet_Excel_Writer_BIFFwriter
 {
     /**

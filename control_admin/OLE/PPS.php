@@ -35,6 +35,7 @@ if (!class_exists('OLE')) {
 * @category Structures
 * @package  OLE
 */
+#[\AllowDynamicProperties]
 class OLE_PPS extends PEAR
 {
     /**

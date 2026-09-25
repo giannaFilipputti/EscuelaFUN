@@ -23,9 +23,6 @@ if (!class_exists('OLE_PPS')) {
     require_once 'OLE/PPS.php';
 }
 
-if (!class_exists('System')) {
-    require_once 'System.php';
-}
 
 /**
 * Class for creating Root PPS's for OLE containers
@@ -34,6 +31,7 @@ if (!class_exists('System')) {
 * @category Structures
 * @package  OLE
 */
+#[\AllowDynamicProperties]
 class OLE_PPS_Root extends OLE_PPS
 {
     /**
@@ -57,8 +55,7 @@ class OLE_PPS_Root extends OLE_PPS
     */
     function __construct($time_1st, $time_2nd, $raChild)
     {
-        $system = new System();
-        $this->_tmp_dir = $system->tmpdir();
+        $this->_tmp_dir = sys_get_temp_dir();
         parent::__construct(
            null, 
            OLE::Asc2Ucs('Root Entry'),

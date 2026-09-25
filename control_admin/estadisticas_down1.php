@@ -27,10 +27,10 @@ $alumnos->getAll('ape1', "", "", "");
 
 $columna = 4;
 foreach ($mod->row as $m) {
-	$worksheet->write(0, $columna, utf8_decode($m['titulo']));
-	$worksheet->write(1, $columna, utf8_decode('Examen Estado'));
-	$worksheet->write(1, $columna + 1, utf8_decode('Fecha finalizacion'));
-	$worksheet->write(1, $columna + 2, utf8_decode('Diploma'));
+	$worksheet->write(0, $columna, mb_convert_encoding((string) ($m['titulo']), 'ISO-8859-1', 'UTF-8'));
+	$worksheet->write(1, $columna, mb_convert_encoding((string) ('Examen Estado'), 'ISO-8859-1', 'UTF-8'));
+	$worksheet->write(1, $columna + 1, mb_convert_encoding((string) ('Fecha finalizacion'), 'ISO-8859-1', 'UTF-8'));
+	$worksheet->write(1, $columna + 2, mb_convert_encoding((string) ('Diploma'), 'ISO-8859-1', 'UTF-8'));
 
 	$worksheet->setMerge(0, $columna, 0, $columna + 2);
 	$columna = $columna + 3;
@@ -75,8 +75,8 @@ foreach ($alumnos->row as $alu) {
 
 		$fecha = strtotime($alu['fecreg']);
 
-		$worksheet->write($fila, 0, utf8_decode($alu['ape1'] . " " . $alu['ape2']));
-		$worksheet->write($fila, 1, utf8_decode($alu['nombre']));
+		$worksheet->write($fila, 0, mb_convert_encoding((string) ($alu['ape1'] . " " . $alu['ape2']), 'ISO-8859-1', 'UTF-8'));
+		$worksheet->write($fila, 1, mb_convert_encoding((string) ($alu['nombre']), 'ISO-8859-1', 'UTF-8'));
 		$worksheet->write($fila, 2, $alu['email']);
 		$worksheet->write($fila, 3, date('d-m-Y', $fecha));
 

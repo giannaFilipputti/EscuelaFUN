@@ -43,6 +43,7 @@ if (!class_exists('Spreadsheet_Excel_Writer_Workbook')) {
 * @package  Spreadsheet_Excel_Writer
 */
 
+#[\AllowDynamicProperties]
 class Spreadsheet_Excel_Writer extends Spreadsheet_Excel_Writer_Workbook
 {
     /**
