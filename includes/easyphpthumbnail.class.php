@@ -305,7 +305,7 @@ class easyphpthumbnail {
 	 * Class constructor
 	 *
 	 */	
-	function easyphpthumbnail() {
+	function __construct() {
 	
 		$this->Thumbsize								= 160;
 		$this->Thumbheight							= 0;
@@ -349,9 +349,9 @@ class easyphpthumbnail {
 	 *
 	 */	
 	function destruct() {
-		if(is_resource($this->im)) imagedestroy($this->im);
-		if(is_resource($this->thumb)) imagedestroy($this->thumb);
-		if(is_resource($this->newimage)) imagedestroy($this->newimage);
+		if($this->im instanceof GdImage || is_resource($this->im)) imagedestroy($this->im);
+		if($this->thumb instanceof GdImage || is_resource($this->thumb)) imagedestroy($this->thumb);
+		if($this->newimage instanceof GdImage || is_resource($this->newimage)) imagedestroy($this->newimage);
 	}
 
 	/**
