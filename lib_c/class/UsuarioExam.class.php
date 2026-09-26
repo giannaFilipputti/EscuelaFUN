@@ -284,7 +284,7 @@ class UsuarioExam
 			$db1 = Db::getInstance();
 			$row_p = $db1->fetchAll($sql, $bind);
 			$conty = 0;
-			$longitud = count($row_p);
+			$longitud = safe_count($row_p);
 			//$this->row_p = $row_p;
 			$this->row = $row_p;
 		}

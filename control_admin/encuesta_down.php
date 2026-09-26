@@ -17,7 +17,7 @@ $worksheet = $workbook->addWorksheet('Totales');
 
 
 $mod->getAllEncuesta($id, 0, 0);
-$tp1 = count($mod->row);
+$tp1 = safe_count($mod->row);
 
 $format_title = $workbook->addFormat();
 $format_title->setBold();

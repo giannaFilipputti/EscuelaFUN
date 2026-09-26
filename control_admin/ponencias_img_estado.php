@@ -37,7 +37,7 @@ if ($st == 1) {
         $diapoDestaBytipo = new PonenciaDestacado();
         $diapoDestaBytipo->getByTipo($tipo);
 		// $result1e = mysql_query("SELECT orden_".$tipo." FROM com_ponencias_destacados ORDER BY orden_".$tipo." DESC LIMIT 1",$link) or die("el error es porque 35: ".mysql_error());
-               if(count($diapoDestaBytipo->row) == 0) { 
+               if(safe_count($diapoDestaBytipo->row) == 0) { 
                    $orden1 = 1;
                }
                 else {

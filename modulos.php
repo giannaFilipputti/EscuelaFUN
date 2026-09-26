@@ -118,7 +118,7 @@ $cap = new Capitulo();
 
                                 <ul class="course-curriculum" uk-accordion="multiple: true">
                                     <?php
-                                    $cant_mod = count($modulos);
+                                    $cant_mod = safe_count($modulos);
                                     foreach ($modulos as $Elem) {
 
                                         $capitulos = $cap->getAll($Elem['id']);

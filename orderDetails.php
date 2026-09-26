@@ -104,7 +104,7 @@ if (!empty($_GET['paymentID']) && !empty($_GET['payerID']) && !empty($_GET['toke
     $cursosT = "";
 
     // LOG: cantidad de cursos preincritos encontrados
-    $numCursos = is_array($cursos) ? count($cursos) : 0;
+    $numCursos = is_array($cursos) ? safe_count($cursos) : 0;
     file_put_contents(__DIR__ . '/paypal_log.txt',
         date('Y-m-d H:i:s') . " | getCursosPreinscritos para usuario=" . $elUser1 . " => " . $numCursos . " curso(s)\n",
         FILE_APPEND

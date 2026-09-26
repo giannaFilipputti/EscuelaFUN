@@ -31,8 +31,8 @@ class InputFilter {
 	  */
 	function __construct($tagsArray = array(), $attrArray = array(), $tagsMethod = 0, $attrMethod = 0, $xssAuto = 1) {		
 		// make sure user defined arrays are in lowercase
-		for ($i = 0; $i < count($tagsArray); $i++) $tagsArray[$i] = strtolower($tagsArray[$i]);
-		for ($i = 0; $i < count($attrArray); $i++) $attrArray[$i] = strtolower($attrArray[$i]);
+		for ($i = 0; $i < safe_count($tagsArray); $i++) $tagsArray[$i] = strtolower($tagsArray[$i]);
+		for ($i = 0; $i < safe_count($attrArray); $i++) $attrArray[$i] = strtolower($attrArray[$i]);
 		// assign to member vars
 		$this->tagsArray = (array) $tagsArray;
 		$this->attrArray = (array) $attrArray;
@@ -166,7 +166,7 @@ class InputFilter {
 				if (!$isCloseTag) {
 					$attrSet = $this->filterAttr($attrSet);
 					$preTag .= '<' . $tagName;
-					for ($i = 0; $i < count($attrSet); $i++)
+					for ($i = 0; $i < safe_count($attrSet); $i++)
 						$preTag .= ' ' . $attrSet[$i];
 					// reformat single tags to XHTML
 					if (strpos($fromTagOpen, "</" . $tagName)) $preTag .= '>';
@@ -192,7 +192,7 @@ class InputFilter {
 	function filterAttr($attrSet) {	
 		$newSet = array();
 		// process attributes
-		for ($i = 0; $i <count($attrSet); $i++) {
+		for ($i = 0; $i <safe_count($attrSet); $i++) {
 			// skip blank spaces in tag
 			if (!$attrSet[$i]) continue;
 			// split into attr name and value

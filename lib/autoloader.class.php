@@ -9,6 +9,21 @@
  */
 const LB = '<br>';
 
+if (!function_exists('safe_count')) {
+    /**
+     * count() con el comportamiento de PHP 7.4: en PHP 8 count() lanza TypeError
+     * si recibe null, "" u otro valor que no sea array/Countable. Muchos getters
+     * devuelven "" o null cuando no hay filas, así que el código usa safe_count().
+     */
+    function safe_count($value, $mode = COUNT_NORMAL)
+    {
+        if (is_array($value) || $value instanceof Countable) {
+            return count($value, $mode);
+        }
+        return $value === null ? 0 : 1;
+    }
+}
+
 class Autoloader
 {
 

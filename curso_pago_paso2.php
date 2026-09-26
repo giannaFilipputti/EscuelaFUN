@@ -22,7 +22,7 @@ if ($pago == 4) {
 $curs = new Curso();
 $cursos = $curs->getCursosPreinscritos($authj->rowff['id']);
 
-if (count($cursos) > 1 && $pago == 4) {
+if (safe_count($cursos) > 1 && $pago == 4) {
     header("Location: curso_basket.php?err=pago4-1");
     die();
 }

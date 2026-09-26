@@ -49,7 +49,7 @@ include('header.php');
           $nota = $exam->row[0]['nota'];
 
           $exam->getByModulo($modulo);
-          $NroRegistrosc = count($exam->row);
+          $NroRegistrosc = safe_count($exam->row);
           //  echo $NroRegistrosc;
           // echo $nota;
           $porcentaje = $NroRegistrosc > 0 ? ($nota * 100) / $NroRegistrosc : 0;

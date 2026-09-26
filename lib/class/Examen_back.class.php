@@ -135,7 +135,7 @@ class Examen
 			$db1 = Db::getInstance();
 			$row_p = $db1->fetchAll($sql, $bind);
 			$conty = 0;
-			$longitud = count($row_p);
+			$longitud = safe_count($row_p);
 			for ($i = 0; $i < $longitud; $i++) {
 
 				//echo $row_p1['nombre'] ;
@@ -206,7 +206,7 @@ class Examen
 			$num = Modulo::getCantPreg($this->modulo);
 
 			while ($x < $num) {
-				$max = count($row_p);
+				$max = safe_count($row_p);
 				$num_aleatorio = rand(0, $max);
 				if (!in_array($row_p[$num_aleatorio], $valores)) {
 					array_push($valores, $row_p[$num_aleatorio]);
@@ -581,7 +581,7 @@ class Examen
 			$db1 = Db::getInstance();
 			$row_p = $db1->fetchAll($sql, $bind);
 			$conty = 0;
-			$longitud = count($row_p);
+			$longitud = safe_count($row_p);
 			for ($i = 0; $i < $longitud; $i++) {
 
 				//echo $row_p1['nombre'] ;
@@ -659,7 +659,7 @@ class Examen
 			$row_p = $db1->fetchAll($sql, $bind);
 			//print_r($row_p);
 			$conty = 0;
-			$longitud = count($row_p);
+			$longitud = safe_count($row_p);
 			for ($i = 0; $i < $longitud; $i++) {
 
 				// leemos todas las respuestas posibles

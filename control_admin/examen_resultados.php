@@ -52,7 +52,7 @@ include("header.php");
         $exam->orden = "orden1";
         $exam->getAll($capitulo->row[0]['id']);
 
-        $NroRegistrosc = count($exam->row);
+        $NroRegistrosc = safe_count($exam->row);
 
 
         foreach ($exam->row as $Elem) {

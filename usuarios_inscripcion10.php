@@ -103,7 +103,7 @@ function createhash($tokens, $length)
     $hashcode = "";
     for ($c = 0; $c < $length; $c++) {
         srand((float)microtime() * 100000000000);
-        $pass = $tokens[rand(0, count($tokens) - 1)];
+        $pass = $tokens[rand(0, safe_count($tokens) - 1)];
         $hashcode = $hashcode . $pass;
     }
     return $hashcode;

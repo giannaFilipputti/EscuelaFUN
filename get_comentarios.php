@@ -53,7 +53,7 @@ foreach($row_p as $row):
         $row_p2 = $db->fetchAll($sql2);
     
         $j = 0;
-        $leng = count($row_p2);
+        $leng = safe_count($row_p2);
     
         foreach($row_p2 as $row2):
     

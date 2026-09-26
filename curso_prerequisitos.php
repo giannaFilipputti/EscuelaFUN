@@ -120,7 +120,7 @@ $cursos = $curs->getCursosSinPrerequisitos($authj->rowff['id']);
                                                         <?php if ($prerequisitos['estado'] == 1) { ?>
 
                                                             <li class="alert alert-success"> <i class="icon-material-outline-check-circle" style="color:#2EAD52"></i> Pre-requisitos validados </li>
-                                                        <?php } else if (count($prerequisitos['documentos']) > 0) { ?>
+                                                        <?php } else if (safe_count($prerequisitos['documentos']) > 0) { ?>
                                                             <li class="alert alert-warning"> <i class="icon-material-outline-check-circle" style="color:#2EAD52"></i> Enviados pre-requisitos (pendiente validación) </li>
                                                         <?php } else { 
                                                             $notapre = 1; ?>
@@ -147,7 +147,7 @@ $cursos = $curs->getCursosSinPrerequisitos($authj->rowff['id']);
                                 <?php } ?>
 
 
-                                <?php if (count($arrPre) >0) { ?> 
+                                <?php if (safe_count($arrPre) >0) { ?> 
                                     <p class="alert alert-danger">
                                         Consideraciones:<br>
                                          - No podrá iniciar el curso hasta que acredite los pre-requisitos exigidos.<br>

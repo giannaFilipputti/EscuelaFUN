@@ -140,7 +140,7 @@ class Examen
 					$db1 = Db::getInstance();
 					$row_p = $db1->fetchAll($sql, $bind);
 					 $conty = 0;
-				  $longitud = count($row_p);
+				  $longitud = safe_count($row_p);
 					for($i=0; $i<$longitud; $i++) {
 
 					    //echo $row_p1['nombre'] ;
@@ -475,7 +475,7 @@ class Examen
 					$db1 = Db::getInstance();
 					$row_p = $db1->fetchAll($sql, $bind);
 					 $conty = 0;
-				  $longitud = count($row_p);
+				  $longitud = safe_count($row_p);
 					for($i=0; $i<$longitud; $i++) {
 
 					    //echo $row_p1['nombre'] ;
@@ -524,7 +524,7 @@ class Examen
 					$db1 = Db::getInstance();
 					$row_p = $db1->fetchAll($sql, $bind);
 					 $conty = 0;
-				  $longitud = count($row_p);
+				  $longitud = safe_count($row_p);
 					for($i=0; $i<$longitud; $i++) {
 
 						// leemos todas las respuestas posibles

@@ -25,7 +25,7 @@ if (!empty($mod->row)) {
 
 		$exam->getByModulo($modulo);
 
-		$NroRegistrosc = count($exam->row);
+		$NroRegistrosc = safe_count($exam->row);
 
 		$porcentaje = $NroRegistrosc > 0 ? ($usuExam->row[0]['nota'] * 100) / $NroRegistrosc : 0;
 		if ($usuExam->row[0]['nota'] >= $preg_aprob) {

@@ -309,7 +309,7 @@ class easyphpthumbnail {
 	// PHP 8.1 depreca el parámetro $num_points; en PHP 7.4 es obligatorio
 	private function filledPolygon($image, $points, $color) {
 		if (PHP_VERSION_ID >= 80000) return imagefilledpolygon($image, $points, $color);
-		return imagefilledpolygon($image, $points, count($points) / 2, $color);
+		return imagefilledpolygon($image, $points, safe_count($points) / 2, $color);
 	}
 
 	function __construct() {
@@ -693,7 +693,7 @@ class easyphpthumbnail {
 			$fontwidth=$dimensions[2];
 		}
 		$cpos=explode(' ',str_replace('%','',$this->Copyrightposition));
-		if (count($cpos)>1) {
+		if (safe_count($cpos)>1) {
 			$cposx=floor(min(max($this->thumbx*($cpos[0]/100)-0.5*$widthx,$fontwidth),$this->thumbx-$widthx-0.5*$fontwidth));
 			$cposy=floor(min(max($this->thumby*($cpos[1]/100)-0.5*$heighty,$heighty),$this->thumby-$heighty*1.5));
 		} else {
@@ -707,7 +707,7 @@ class easyphpthumbnail {
 				$rgbarray=ImageColorsForIndex($this->thumb,$indexis);
 				array_push($colors,$rgbarray['red'],$rgbarray['green'],$rgbarray['blue']);
 			}
-			if (array_sum($colors)/count($colors)>180) {
+			if (array_sum($colors)/safe_count($colors)>180) {
 				if ($this->Copyrightfonttype=='')
 					imagestring($this->thumb,$this->Copyrightfontsize,$cposx,$cposy,$this->Copyrighttext,imagecolorallocate($this->thumb,0,0,0));
 				else

@@ -54,7 +54,7 @@ include("header.php");
             
             $usuExam->getByModulo($ElemMod['id']);
             if (!empty($usuExam->row)) {
-              $NroRegistrosc = count($usuExam->row);
+              $NroRegistrosc = safe_count($usuExam->row);
             } else {
               $NroRegistrosc = 0;
             }
@@ -63,7 +63,7 @@ include("header.php");
             $usuNoApro->noAprobado = 1;
             $usuNoApro->getByModulo($ElemMod['id']);
             if (!empty($usuNoApro->row)) {
-              $NroRegistros0 = count($usuNoApro->row);
+              $NroRegistros0 = safe_count($usuNoApro->row);
             } else {
               $NroRegistros0 = 0;
             }
@@ -74,7 +74,7 @@ include("header.php");
             $usuApro->noAprobado = 0;
             $usuApro->getByModulo($ElemMod['id']);
             if (!empty($usuApro->row)) {
-              $NroRegistros1 = count($usuApro->row);
+              $NroRegistros1 = safe_count($usuApro->row);
             } else {
               $NroRegistros1 = 0;
             }

@@ -6,7 +6,7 @@ require_once 'lib/auth.php';
 
 $row_Notas = Curso::getNotas($curso, $modulo, $capitulo, $authj->rowff['id']);
 
-$cant_Notas = count($row_Notas);
+$cant_Notas = safe_count($row_Notas);
 
 $div_comentarios = "";
 

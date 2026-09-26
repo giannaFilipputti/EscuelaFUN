@@ -101,7 +101,7 @@ include('header.php');
           $exam->getExamenRespuesta($exam->row[0]['id']);
           //  $sql_res = "SELECT * FROM com_exam_resp WHERE pregunta=".$row_preg['id']."";
           //        $result_res = mysql_query($sql_res);
-          $cant_res = count($exam->row);
+          $cant_res = safe_count($exam->row);
           foreach ($exam->row as $ElemResp) {; ?>
             <div id="div_<?php echo $uncont; ?>">
               <label>

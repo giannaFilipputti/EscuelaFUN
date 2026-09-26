@@ -3,7 +3,7 @@
 $logs_vars = "";
 $logs_varsi = "";
 
-$var_num = count($_GET);
+$var_num = safe_count($_GET);
 $var_tags = array_keys($_GET);// obtiene los nombres de las varibles
 $var_valores = array_values($_GET);// obtiene los valores de las varibles
 
@@ -21,7 +21,7 @@ $logs_varsi .= $var_tags[$i]."=".$var_valores[$i]."&";
 
 /***VARIABLES POR POST ***/
 
-$var_num2 = count($_POST);
+$var_num2 = safe_count($_POST);
 $var_tags2 = array_keys($_POST); // obtiene los nombres de las varibles
 $var_valores2 = array_values($_POST);// obtiene los valores de las varibles
 

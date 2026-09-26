@@ -22,7 +22,7 @@ if ($curso->row[0]['examen'] == 1) {
   // $SQL = "SELECT * FROM com_cursos_mod WHERE curso=".$Area." AND estado = 1 AND examen_unico = 1 ORDER BY orden";
   //   $rsCons = mysql_query($SQL, $link) or die(mysql_error());
 
-  $cantReg = count($mod->row);
+  $cantReg = safe_count($mod->row);
 
   if ($cantReg > 0) {
 
@@ -39,7 +39,7 @@ if ($curso->row[0]['examen'] == 1) {
 
   // $rsCons = mysql_query($SQL, $link) or die(mysql_error());
 
-  $cantReg = count($mod->row);
+  $cantReg = safe_count($mod->row);
 
   if ($cantReg > 0) {
 

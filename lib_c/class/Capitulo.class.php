@@ -202,7 +202,7 @@ class Capitulo
 			$db1 = Db::getInstance();
 			$row_p = $db1->fetchAll($sql, $bind);
 			$conty = 0;
-			$longitud = count($row_p);
+			$longitud = safe_count($row_p);
 			// for($i=0; $i<$longitud; $i++) {
 
 			//     //echo $row_p1['nombre'] ;

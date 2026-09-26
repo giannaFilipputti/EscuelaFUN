@@ -13,7 +13,7 @@ $id_capitulo = $_POST['id_capitulo'];
 
 if(isset($_FILES['files'])){
 
-    for($i=0;$i<count($_FILES['files']['name']);$i++){
+    for($i=0;$i<safe_count($_FILES['files']['name']);$i++){
         
         foreach($_FILES['files'] as $v=>$file) {
 

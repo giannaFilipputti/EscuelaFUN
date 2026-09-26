@@ -19,7 +19,7 @@ include('header.php');
 $cur_mod = New Modulo();
 $cur_mod->getModByCurso($ref);
 
-$num_preg = count($exam->row);
+$num_preg = safe_count($exam->row);
 $num_preg ++;
 ?>
 
@@ -144,7 +144,7 @@ $num_preg ++;
           <tr id="table6-row-<?= $ElemExam['id'] ?>">
             <td class="dragHandle"><?php echo $conty; ?></td>
             <td><?php echo "<strong>" . $pagina->row[0]['titulo'] . ":</strong> " . $ElemExam['num'] . "<br>" . strip_tags($ElemExam['pregunta']) ?></td>
-            <td align="center"><?php echo count($exam->row) . " (" . count($examResp->row) . ")" ?></td>
+            <td align="center"><?php echo safe_count($exam->row) . " (" . safe_count($examResp->row) . ")" ?></td>
 
             <td align="center">
               <a href="examen_mod.php?id=<?php echo $ElemExam['id']; ?>&ref=<?php echo $id ?>"><img border="0" alt="Modificar" title="Modificar" src="body/modif.gif"></a>

@@ -66,7 +66,7 @@ $mod = new Modulo();
 $modulos = $mod->getAll($curso);
 
 $descargas = $mod->getDescargas($modulo);
-$cant_desc = count($descargas);
+$cant_desc = safe_count($descargas);
 
 $cap = new Capitulo();
 //$capitulos = $cap->getAll($modulos[0]['id']);

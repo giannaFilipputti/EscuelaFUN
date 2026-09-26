@@ -48,83 +48,83 @@ $mod = new Modulo();
        <?php
 
 $mod->getAllEncuesta($id,0,0);
-$tp1 = count($mod->row);
+$tp1 = safe_count($mod->row);
 
 $mod->getAllEncuesta($id,'p1','1');
-$tp1r1 = count($mod->row)."<br>";
+$tp1r1 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p1','2');
-$tp1r2 = count($mod->row)."<br>";
+$tp1r2 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p1','3');
-$tp1r3 = count($mod->row)."<br>";
+$tp1r3 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p1','4');
-$tp1r4 = count($mod->row)."<br>";
+$tp1r4 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p1','5');
-$tp1r5 = count($mod->row)."<br>";
+$tp1r5 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p2','1');
-$tp2r1 = count($mod->row)."<br>";
+$tp2r1 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p2','2');
-$tp2r2 = count($mod->row)."<br>";
+$tp2r2 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p2','3');
-$tp2r3 = count($mod->row)."<br>";
+$tp2r3 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p2','4');
-$tp2r4 = count($mod->row)."<br>";
+$tp2r4 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p2','5');
-$tp2r5 = count($mod->row)."<br>";
+$tp2r5 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p3','1');
-$tp3r1 = count($mod->row)."<br>";
+$tp3r1 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p3','2');
-$tp3r2 = count($mod->row)."<br>";
+$tp3r2 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p3','3');
-$tp3r3 = count($mod->row)."<br>";
+$tp3r3 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p3','4');
-$tp3r4 = count($mod->row)."<br>";
+$tp3r4 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p3','5');
-$tp3r5 = count($mod->row)."<br>";
+$tp3r5 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p4','1');
-$tp4r1 = count($mod->row)."<br>";
+$tp4r1 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p4','2');
-$tp4r2 = count($mod->row)."<br>";
+$tp4r2 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p4','3');
-$tp4r3 = count($mod->row)."<br>";
+$tp4r3 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p4','4');
-$tp4r4 = count($mod->row)."<br>";
+$tp4r4 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p4','5');
-$tp4r5 = count($mod->row)."<br>";
+$tp4r5 = safe_count($mod->row)."<br>";
 
 
 $mod->getAllEncuesta($id,'p5','1');
-$tp5r1 = count($mod->row)."<br>";
+$tp5r1 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p5','2');
-$tp5r2 = count($mod->row)."<br>";
+$tp5r2 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p5','3');
-$tp5r3 = count($mod->row)."<br>";
+$tp5r3 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p5','4');
-$tp5r4 = count($mod->row)."<br>";
+$tp5r4 = safe_count($mod->row)."<br>";
 
 $mod->getAllEncuesta($id,'p5','5');
-$tp5r5 = count($mod->row)."<br>";
+$tp5r5 = safe_count($mod->row)."<br>";
 
 
 // $db1 = Db::getInstance();

@@ -156,10 +156,10 @@ class EasyPDO extends PDO
         if(empty($table) || empty($fieldNames) || empty($data)) {
             return 0;
         }
-        $fieldCount = count($fieldNames);
+        $fieldCount = safe_count($fieldNames);
         $valueList = '';
         foreach ($data as $values) {
-            $dataCount = count($values);
+            $dataCount = safe_count($values);
             if($dataCount != $fieldCount) {
                 if($dataCount > $fieldCount) {
                     $values = array_slice($values, 0, $fieldCount);
