@@ -95,7 +95,7 @@ include('header.php');
 
             $NroRegistrosc = count($exam->row);
 
-            $porcentaje = round(($Elem['nota'] * 100) / $NroRegistrosc);
+            $porcentaje = $NroRegistrosc > 0 ? round(($Elem['nota'] * 100) / $NroRegistrosc) : 0;
 
             $mod->getOne($Elem['modulo']);
             $curso->getOne($mod->row[0]['curso']);

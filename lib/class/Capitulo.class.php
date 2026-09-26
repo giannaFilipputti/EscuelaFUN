@@ -189,7 +189,7 @@ class Capitulo
 		);
 		$db1 = Db::getInstance();
 		$cont1 = $db1->run($sql1, $bind1);
-		$porcentaje = ($cont1 * 100) / $cont;
+		$porcentaje = $cont > 0 ? ($cont1 * 100) / $cont : 0;
 		if ($salida == 0) {
 			$this->porcentaje = $porcentaje;
 		} else {
@@ -269,7 +269,7 @@ class Capitulo
 			$row_p = $db1->fetchAll($sql, $bind);
 
 			$suma =  $row_p[0]['totseg'];
-			$porc = ceil(($suma * 100) / $segundos_cap);
+			$porc = $segundos_cap > 0 ? ceil(($suma * 100) / $segundos_cap) : 0;
 
 			if ($porc > 100) {
 				$porc = 100;

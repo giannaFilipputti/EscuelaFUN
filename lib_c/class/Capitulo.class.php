@@ -350,7 +350,7 @@ class Capitulo
 		);
 		$db1 = Db::getInstance();
 		$cont1 = $db1->run($sql1, $bind1);
-		$porcentaje = ($cont1 * 100) / $cont;
+		$porcentaje = $cont > 0 ? ($cont1 * 100) / $cont : 0;
 		if ($salida == 0) {
 			$this->porcentaje = $porcentaje;
 		} else {

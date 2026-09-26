@@ -45,7 +45,7 @@ if (!empty($usuExam->row)) {
 
 		$NroRegistrosc = count($exam->row);
 
-		$porcentaje = round(($Elem['nota'] * 100) / $NroRegistrosc);
+		$porcentaje = $NroRegistrosc > 0 ? round(($Elem['nota'] * 100) / $NroRegistrosc) : 0;
 
 		$mod = new Modulo();
 		$curso = new Curso();

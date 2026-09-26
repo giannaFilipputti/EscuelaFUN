@@ -68,7 +68,7 @@ $exam = new Examen();
 
               $NroRegistrosc = count($exam->row);
 
-              $porcentaje = ($Elem['nota'] * 100) / $NroRegistrosc;
+              $porcentaje = $NroRegistrosc > 0 ? ($Elem['nota'] * 100) / $NroRegistrosc : 0;
 
               $modulo->getOne($Elem['modulo']);
 

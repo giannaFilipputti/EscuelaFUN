@@ -282,7 +282,7 @@ static function actualizarAvance ($user, $segundos_mod, $segundos_cur, $id_mod, 
 					$row_p = $db1->fetchAll($sql, $bind);
 				  
 					$suma =  $row_p[0]['totseg'];
-					$porc = ceil(($suma * 100) / $segundos_mod);
+					$porc = $segundos_mod > 0 ? ceil(($suma * 100) / $segundos_mod) : 0;
 
 					if ($porc > 100) {
 						$porc = 100;

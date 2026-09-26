@@ -52,7 +52,7 @@ include('header.php');
           $NroRegistrosc = count($exam->row);
           //  echo $NroRegistrosc;
           // echo $nota;
-          $porcentaje = ($nota * 100) / $NroRegistrosc;
+          $porcentaje = $NroRegistrosc > 0 ? ($nota * 100) / $NroRegistrosc : 0;
 
 
 

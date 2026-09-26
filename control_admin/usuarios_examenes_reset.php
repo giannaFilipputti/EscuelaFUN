@@ -27,7 +27,7 @@ if (!empty($mod->row)) {
 
 		$NroRegistrosc = count($exam->row);
 
-		$porcentaje = ($usuExam->row[0]['nota'] * 100) / $NroRegistrosc;
+		$porcentaje = $NroRegistrosc > 0 ? ($usuExam->row[0]['nota'] * 100) / $NroRegistrosc : 0;
 		if ($usuExam->row[0]['nota'] >= $preg_aprob) {
 			$pregfijo = '';
 			$claseapro = 'verde';

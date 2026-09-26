@@ -348,7 +348,7 @@ $exam = new Examen();
                                                 $porcVisual = "";
                                                 $visualizacion = Curso::getModuloAvance($Elem['id'], $row['id']);
                                                 if ($visualizacion['duracion'] > 0 && $Elem['duracion'] > 0) {
-                                                    $porcVisual = round(($visualizacion['duracion'] * 100) / $Elem['duracion']);
+                                                    $porcVisual = $Elem['duracion'] > 0 ? round(($visualizacion['duracion'] * 100) / $Elem['duracion']) : 0;
                                                     if ($porcVisual > 100) {
                                                         $porcVisual = 100;
                                                     }
@@ -418,7 +418,7 @@ $exam = new Examen();
                                         <?php }
                                         }  ?>
                                         <?php if ($authj->rowff['labor'] >= 6) {
-                                            $porcV = round(($row['durCursoU'] * 100) / $row['durCurso']);
+                                            $porcV = $row['durCurso'] > 0 ? round(($row['durCursoU'] * 100) / $row['durCurso']) : 0;
                                         ?>
                                             <td class="no-sort"><?php echo $row['id']; ?></td>
                                             <td class="no-sort"><?php echo  $row['durCursoU']; ?></td>
