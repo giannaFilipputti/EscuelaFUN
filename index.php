@@ -49,7 +49,7 @@ $areas = $are->getAll();
                 <div class="uk-width-1-1">
                     <div class="page-content-inner uk-position-z-index text-center">
                         <h1 style="color:#ffffff">Escuela de Especialización <br> Deportiva FUN</h1>
-                        <h4 class="my-lg-4" style="color:#ffffff"> Árbitros y Jueces.
+                        <h4 class="my-lg-4" style="color:#ffffff"> Árbitros y Jueces
                         </h4>
                         <?php if ($authj->logueado == 1) { ?>
                             <a href="cursos.php" class="btn btn-default">Ver Cursos </a>
