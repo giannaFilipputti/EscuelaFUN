@@ -52,10 +52,10 @@ class Autoloader
 
         $path = $path . DIRECTORY_SEPARATOR . $classname . self::$extension;
 
-        if (! file_exists($path)) {
-            echo $path;
-            throw new Exception('The initialised Class is not available!', 10);
-        } else {
+        // Si la clase no es de la aplicación (p. ej. clases de dompdf o de vendor/)
+        // no se lanza excepción: class_exists() debe poder devolver false y los
+        // demás autoloaders registrados deben tener su oportunidad.
+        if (file_exists($path)) {
             require_once $path;
         }
     }
