@@ -244,6 +244,7 @@ class Examen
 			$row_p = $db1->fetchAll($sql, $bind);
 
 			$x = 0;
+			$valores = array();
 			//$num = 40;
 			$num = Modulo::getCantPreg($this->modulo);
 
